@@ -6,9 +6,26 @@
     width: 100%;
     min-height: 100vh;
 
+    .app-topbar {
+        display: flex;
+        width: calc(100% - 80px);
+        padding: 10px 40px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        background: rgba(225, 225, 225, 0.7);
+        border-bottom: 0.5px solid gray;
+    }
+
     .app-header {
         font-size: 28px;
         padding: 15px 0;
         text-align: center;
+    }
+
+    .app-navigation {
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 }
