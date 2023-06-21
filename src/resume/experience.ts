@@ -32,6 +32,26 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     }
 ]
 
+export const EDUCATION_ITEMS: ExperienceItem[] = [
+    {
+        dateRange: 'Graduating 2025',
+        title: 'Master of Software Engineering',
+        venue: 'North Dakota State University',
+        description: ''
+    },
+    {
+        dateRange: 'Aug 2005 - Dec 2010',
+        title: 'B.S. IN ACCOUNTING',
+        venue: 'BRIGHAM YOUNG UNIVERSITY',
+        description: `Courses:
+        CS 100 – Fundamentals of Computing: Learned HTML, CSS, and Javascript.
+        CS 142 – Intro to Programming: Learned object oriented programming in Java.
+        CS 235 – Data Structures: Learned and constructed data structures in Java. Evaluated algorithm performance using Big O notation. Wrote Java applications with graphical user interfaces.
+        ISYS – 401 – Business and Accounting Information Systems: Learned relational databases/SQL.
+        `
+    }
+]
+
 
 // {
 //     dateRange: '',
