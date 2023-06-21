@@ -25,8 +25,8 @@ function App() {
       <div className="app-topbar">
         <div className='app-header'>Welcome to Kenny Heagle's Page!</div>
         <div className="app-navigation">
-          <KennyButton callback={() => { setPage('default') }} text='Home' />
-          <KennyButton callback={() => { setPage('resume') }} text='Resume' />
+          <div onClick={() => { setPage('default') }}>Home</div>
+          <div onClick={() => { setPage('resume') }}>Resume</div>
         </div>
       </div>
       <div className="app-page">
