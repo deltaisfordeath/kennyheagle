@@ -77,7 +77,11 @@ $green-text: rgb(29, 130, 76);
             max-height: 186px;
             opacity: 1;
             margin-bottom: 15px;
-            transition: opacity 0.4s linear, max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: opacity 0.4s linear, max-height 0.4s cubic-bezier(.2,.8,.2,.8);
+
+            .expanded {
+                transition: max-height 0.4s ease-in;
+            }
 
             &:last-of-type {
                 margin-bottom: 0;
@@ -144,7 +148,7 @@ $green-text: rgb(29, 130, 76);
     }
 
     .resume-container .resume-section .experience-item-container {
-        max-height: 120px;
+        max-height: 155px;
     }
 }
 
@@ -158,6 +162,6 @@ $green-text: rgb(29, 130, 76);
     }
 
     .resume-container .resume-section .experience-item-container {
-        max-height: 130px;
+        max-height: 140px;
     }
 }

@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import './Resume.scss';
 import { EXPERIENCE_ITEMS, EDUCATION_ITEMS } from './experience';
+import exp from 'constants';
 
 function TitleBlock() {
    return (
@@ -57,7 +58,7 @@ function EducationSection() {
       <div className="header-text">Education</div>
       <div className="resume-section-content">
          {EDUCATION_ITEMS.map((item, index) => {
-            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className="experience-item-container" key={`experience-item-${index}`}>
+            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className={`experience-item-container ${expandExperience ? 'expanded' : ''}`} key={`experience-item-${index}`}>
                <div className="experience-item-dates">
                   {item.dateRange}
                </div>
