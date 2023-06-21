@@ -22,15 +22,11 @@ function TitleBlock() {
 function ExperienceSection() {
    const [expandExperience, setExpandExperience] = useState(false);
 
-   const experienceItems = useMemo(() => {
-      return expandExperience ? EXPERIENCE_ITEMS : EXPERIENCE_ITEMS.slice(0, 2);
-   }, [expandExperience])
-
    return <div className='resume-section'>
       <div className="header-text">Experience</div>
       <div className="resume-section-content">
-         {experienceItems.map((item, index) => {
-            return <div className="experience-item-container" key={`experience-item-${index}`}>
+         {EXPERIENCE_ITEMS.map((item, index) => {
+            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className="experience-item-container" key={`experience-item-${index}`}>
                <div className="experience-item-dates">
                   {item.dateRange}
                </div>
@@ -45,9 +41,11 @@ function ExperienceSection() {
                <div className="experience-item-description">
                   {item.description}
                </div>
-               <div className="experience-section-expand" onClick={() => setExpandExperience(!expandExperience)} />
             </div>
          })}
+      </div>
+      <div className="experience-section-expand" onClick={() => setExpandExperience(!expandExperience)}>
+         {expandExperience ? 'Show Less' : 'Show More'}
       </div>
    </div>
 }
