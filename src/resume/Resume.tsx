@@ -27,7 +27,7 @@ function ExperienceSection() {
       <div className="header-text">Experience</div>
       <div className="resume-section-content">
          {EXPERIENCE_ITEMS.map((item, index) => {
-            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className="experience-item-container" key={`experience-item-${index}`}>
+            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className={`experience-item-container ${expandExperience ? 'expanded' : ''}`} key={`experience-item-${index}`}>
                <div className="experience-item-dates">
                   {item.dateRange}
                </div>
