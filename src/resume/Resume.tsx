@@ -23,7 +23,7 @@ function TitleBlock() {
 function RenderExperience({ items }: { items: ExperienceItem[] }) {
    return <>
       {items.map((item, index) => {
-         return <div className="experience-item-container" style={{ ...(index + 1 === items.length && { marginBottom: 0 }) }} key={`experience-item-${index}`}>
+         return <div className="experience-item-container" key={`experience-item-${index}`}>
             <div className="experience-item-dates">
                {item.dateRange}
             </div>
