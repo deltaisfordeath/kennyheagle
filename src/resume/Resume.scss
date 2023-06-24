@@ -1,16 +1,17 @@
-$green-text: rgb(29, 130, 76);
+$blue-text: rgb(40, 50, 210);
+$gray-text: rgb(125, 125, 125);
 
 .resume-container {
     max-width: 320px;
-    padding: 20px;
+    padding: 50px 20px;
     margin: 30px 0;
-    font-size: 11.2px;
-    font-family: 'PT Serif', serif;
+    font-size: 11.5px;
+    font-family: 'Fira Sans', sans-serif;
     border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 8px;
 
     .resume-title-block {
-        font-family: 'Work Sans', sans-serif;
+        //font-family: 'Work Sans', sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -38,17 +39,23 @@ $green-text: rgb(29, 130, 76);
                 margin: 0 5px 1.5px 5px;
                 display: inline-block;
                 border-radius: 4px;
-                background: $green-text;
+                background: $blue-text;
             }
         }
 
         .title-block-email {
             font-weight: bold;
-            color: $green-text;
+            color: $blue-text;
         }
     }
 
+    .personal-statement {
+        margin-top: 15px;
+        text-align: center;
+    }
+
     .header-text {
+        font-size: 1.15em;
         text-transform: uppercase;
         font-weight: bold;
         text-transform: uppercase;
@@ -75,10 +82,6 @@ $green-text: rgb(29, 130, 76);
         .experience-item-container {
             opacity: 1;
             margin-bottom: 15px;
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
         }
 
         .experience-item-dates {
@@ -92,17 +95,18 @@ $green-text: rgb(29, 130, 76);
         .experience-item-assignment {
             font-family: 'IBM Plex Sans', sans-serif;
             display: flex;
-            gap: 5px;
+            justify-content: space-between;
             font-weight: bold;
             margin-bottom: 3px;
             text-transform: uppercase;
 
             .experience-item-position {
-                color: $green-text;
+                color: $blue-text;
             }
 
             .experience-item-venue {
-                color: gray;
+                text-align: right;
+                color: $gray-text;
             }
         }
 
@@ -116,6 +120,24 @@ $green-text: rgb(29, 130, 76);
             cursor: pointer;
             text-transform: uppercase;
             font-size: 0.75em;
+        }
+    }
+
+    .skills-section {
+        .skills-list-container {
+            display: flex;
+
+            ul {
+                padding-left: 12px;
+
+                li::marker {
+                    color: $blue-text;
+                }
+            }
+
+            .skills-item {
+                margin-bottom: 5px;
+            }
         }
     }
 }
@@ -132,6 +154,25 @@ $green-text: rgb(29, 130, 76);
     .resume-container {
         max-width: 500px;
         padding: 20px 40px;
+
+        .resume-section {
+            .experience-item-assignment {
+                justify-content: flex-start;
+                gap: 5px;
+
+                .experience-item-venue {
+                    text-align: left;
+                }
+            }
+        }
+
+        .skills-section {
+            ul {
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2;
+            }
+        }
     }
 }
 
@@ -139,6 +180,6 @@ $green-text: rgb(29, 130, 76);
     .resume-container {
         font-size: 12.5px;
         max-width: 590px;
-        padding: 20px 80px;
+        padding: 50px 80px;
     }
 }

@@ -15,7 +15,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     {
         dateRange: 'MAY 2013 – FEB 2022',
         title: 'ACCOUNTING SYSTEMS MANAGER',
-        venue: 'ADVANCED GLAZING SOLUTIONS, INC.',
+        venue: 'ADVANCED GLAZING SOLUTIONS',
         description: 'Managed all information technology, accounting, and compliance needs for a contracting firm in a small business environment. Automated monthly billing processes to reduce errors and increase productivity. Wrote Python scrips and Excel macros to aid in data validation for accounting records.'
     },
     {
