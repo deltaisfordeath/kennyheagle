@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
 import './Resume.scss';
-import { EXPERIENCE_ITEMS, EDUCATION_ITEMS } from './experience';
-import exp from 'constants';
+import { EXPERIENCE_ITEMS, EDUCATION_ITEMS, ExperienceItem } from './experience';
+import { Collapse } from '@mui/material';
 
 function TitleBlock() {
    return (
@@ -20,30 +20,39 @@ function TitleBlock() {
    )
 }
 
+function RenderExperience({items}: {items: ExperienceItem[]}) {
+   return <>
+      {items.map((item, index) => {
+      return <div className="experience-item-container" key={`experience-item-${index}`}>
+         <div className="experience-item-dates">
+            {item.dateRange}
+         </div>
+         <div className="experience-item-assignment">
+            <div className="experience-item-position">
+               {item.title},
+            </div>
+            <div className="experience-item-venue">
+               {item.venue}
+            </div>
+         </div>
+         <div className="experience-item-description">
+            {item.description}
+         </div>
+      </div>
+   })}
+   </>
+}
+
 function ExperienceSection() {
-   const [expandExperience, setExpandExperience] = useState(false);
+   const [expandExperience, setExpandExperience] = useState(false); 
 
    return <div className='resume-section'>
       <div className="header-text">Experience</div>
       <div className="resume-section-content">
-         {EXPERIENCE_ITEMS.map((item, index) => {
-            return <div style={{...(index >= 1 && !expandExperience ? {margin: 0} : {}), ...(index > 1 && !expandExperience ? {maxHeight: 0, opacity: 0} : {})}} className={`experience-item-container ${expandExperience ? 'expanded' : ''}`} key={`experience-item-${index}`}>
-               <div className="experience-item-dates">
-                  {item.dateRange}
-               </div>
-               <div className="experience-item-assignment">
-                  <div className="experience-item-position">
-                     {item.title},
-                  </div>
-                  <div className="experience-item-venue">
-                     {item.venue}
-                  </div>
-               </div>
-               <div className="experience-item-description">
-                  {item.description}
-               </div>
-            </div>
-         })}
+         <RenderExperience items={EXPERIENCE_ITEMS.slice(0,2)} />
+         <Collapse in={expandExperience}>
+            <RenderExperience items={EXPERIENCE_ITEMS.slice(2)} />
+         </Collapse>
       </div>
       {EXPERIENCE_ITEMS.length > 2 && <div className="experience-section-expand" onClick={() => setExpandExperience(!expandExperience)}>
          {expandExperience ? 'Show Less' : 'Show More'}
