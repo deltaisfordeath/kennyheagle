@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 8px;
     width: 100%;
     min-height: 100vh;
+    position: absolute;
 
     .app-topbar {
         display: flex;
         width: calc(100% - 10px);
+        box-sizing: padding-box;
         justify-content: space-between;
         align-items: center;
         padding: 0 5px;
@@ -18,42 +19,66 @@
     }
 
     .app-header {
-        font-size: 2em;
+        font-size: 18px;
         padding: 15px 0;
         text-align: center;
     }
 
     .app-navigation {
         display: flex;
-        align-items: center;
         gap: 10px;
+        align-items: center;
+
+        .navigation-button {
+            text-align: right;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &.selected {
+                color: gray;
+                cursor: default;
+            }
+        }
+    }
+
+    .home-footer-text {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        padding: 8px 0;
+        font-size: 9px;
+        text-align: center;
     }
 }
 
 @media (min-width: 480px) {
     .app-container {
-        font-size: 10px;
 
         .app-topbar {
-        width: calc(100% - 40px);
-        padding: 10px 20px;
+            width: calc(100% - 40px);
+            padding: 10px 20px;
+        }
+
+        .app-header {
+            font-size: 22px;
+        }
+
+        .app-navigation {
+            gap: 20px;
         }
     }
 }
 
 @media (min-width: 580px) {
     .app-container {
-        font-size: 12px;
-
         .app-topbar {
             width: calc(100% - 80px);
             padding: 10px 40px;
-            }
-    }
-}
+        }
 
-@media (min-width: 800px) {
-    .app-container {
-        font-size: 16px;
+        .app-navigation {
+            gap: 30px;
+        }
+
     }
 }

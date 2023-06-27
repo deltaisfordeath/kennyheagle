@@ -1,0 +1,35 @@
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'PT serif', 'serif';
+    font-size: 14px;
+    padding: 40px 20px;
+    gap: 20px;
+
+    .about-me-section {
+
+        .heagle-family-image {
+            width: 180px;
+            height: 140px;
+            float: left;
+            margin-right: 15px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('../img/heagle_family.jpg');
+        }
+
+    }
+}
+
+@media (min-width: 580px) {
+    .about-me-container {
+        padding: 40px 80px;
+    }
+}
+
+@media (min-width: 800px) {
+    .about-me-container {
+        max-width: 700px;
+    }
+}
