@@ -2,7 +2,7 @@ import React from 'react'
 import './AboutMe.scss';
 
 export default function AboutMe() {
-    return <div className="about-me-container">
+    return <div className="about-me-container page-container">
         <div className="about-me-section">
             <div className="heagle-family-image" />
             I&apos;ve been fascinated with electronics since the first time my dad brought home a desktop computer when I was a child. The computer ran on MS-DOS, couldn’t connect to the internet or play videos, or do anything else that should have caught the attention of a five year old boy. Yet somehow that machine drew me in; it had an inexplicable, monumental presence about it. That impression has stuck with me my entire life.

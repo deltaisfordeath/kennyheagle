@@ -1,0 +1,28 @@
+.Answer {
+  font-size: 0.8em;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.Answer-body {
+  max-height: 20em;
+  overflow-y: auto;
+  background: white;
+}
+
+.Answer-footer {
+  font-weight: 600;
+  border-top: 1px solid gray;
+  padding: 5px 0;
+}
+
+.accepted {
+  background-color: rgb(250, 237, 165);
+}
+
+.accepted-header {
+  font-weight: 600;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

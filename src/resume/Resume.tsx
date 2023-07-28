@@ -61,7 +61,7 @@ function ExperienceSection({ title, items }: { title: string, items: ExperienceI
 }
 
 export default function Resume() {
-   return <div className='resume-container'>
+   return <div className='resume-container page-container'>
       <TitleBlock />
 
       <div className="personal-statement">Technology obsessed, passionate engineer proficient in Front End Web Development technologies</div>

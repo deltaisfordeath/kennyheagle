@@ -1,0 +1,82 @@
+.Question {
+  border: 1px solid black;
+  word-break: break-word;
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 70%;
+  max-width: 900px;
+  padding: 1.5em;
+  background-color: #a7bdd83b;
+  transition: transform 0.2s, margin 0.2s;
+  scrollbar-color: green rgb(250, 237, 165);
+}
+
+.Question:hover {
+  background-color: #d2ddeb3b;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.397);
+  cursor: pointer;
+}
+
+.Question-body {
+  font-size: 0.8em;
+  max-height: 20em;
+  overflow-y: auto;
+}
+
+.Question-title {
+  font-weight: 600;
+  border-bottom: 1px solid gray;
+}
+
+.Question-footer {
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Question-stats {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Question-tags {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Question-tag {
+  margin-left: 10px;
+}
+
+/*ALTERNATE: Only question title displayed, body and footer appear on hover*/
+/* .Question-body,
+.Question-footer {
+  display: none;
+}
+
+.Question:hover > .Question-body {
+  display: block;
+}
+
+.Question:hover > .Question-footer {
+  display: flex;
+} */
+
+@media (max-width: 768px) {
+  .Question {
+    width: 90%;
+  }
+  .Question-stats {
+    flex-direction: column;
+    flex-basis: auto;
+  }
+  .Question-tags {
+    width: auto;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

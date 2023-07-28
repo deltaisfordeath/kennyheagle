@@ -2,19 +2,19 @@ import React, { useCallback, useState } from 'react';
 import './App.scss';
 import Resume from './resume/Resume';
 import AboutMe from './about/AboutMe';
-import Home from './home/Home';
+import SearchForm from './stack-api/SearchForm';
 
-type KennyPage = 'home' | 'about' | 'resume';
+type KennyPage = 'demo' | 'about' | 'resume';
 
 function App() {
-  const [page, setPage] = useState<KennyPage>('home');
+  const [page, setPage] = useState<KennyPage>('about');
 
   const renderPage = useCallback(() => {
     switch (page) {
-      case 'home':
-        return <Home />
       case 'about':
         return <AboutMe />
+      case 'demo':
+        return <SearchForm />
       case 'resume':
         return <Resume />
     }
@@ -25,8 +25,8 @@ function App() {
       <div className="app-topbar">
         <div className='app-header'>Welcome to my page!</div>
         <div className="app-navigation">
-          <div className={`navigation-button ${page === 'home' ? ' selected' : ''}`} onClick={() => { setPage('home') }}>Home</div>
           <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
+          <div className={`navigation-button ${page === 'demo' ? ' selected' : ''}`} onClick={() => { setPage('demo') }}>Demo Project</div>
           <div className={`navigation-button${page === 'resume' ? ' selected' : ''}`} onClick={() => { setPage('resume') }}>Resume</div>
         </div>
       </div>

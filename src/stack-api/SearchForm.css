@@ -1,0 +1,58 @@
+input[type='text'] {
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.demo-project-description {
+  margin: 30px 10px;
+  max-width: 715px;
+}
+
+button {
+  padding: 5px 40px;
+  margin: 20px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #4285f4;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SearchForm-header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#headerText {
+  font-size: 2.7em;
+  margin-right: 20px;
+}
+
+#logo {
+  width: 200px;
+}
+
+@media (max-width: 480px) {
+  .SearchForm-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #headerText {
+    margin: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  input[type='text'] {
+    width: 90%;
+  }
+}
