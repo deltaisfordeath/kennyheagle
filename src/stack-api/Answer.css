@@ -1,6 +1,6 @@
 .Answer {
   font-size: 0.8em;
-  margin: 10px 0;
+  margin-top: 10px;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -25,4 +25,10 @@
   font-weight: 600;
   text-decoration: underline;
   text-transform: uppercase;
+}
+
+@media (min-width: 580px) {
+  .Answer-body {
+    padding: 0 10px;
+  }
 }
