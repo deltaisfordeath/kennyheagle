@@ -2,13 +2,14 @@ input[type='text'] {
   width: 90%;
 }
 
-code {
-  white-space: break-spaces;
+.SearchForm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.demo-project-description {
-  margin: 30px 10px;
-  max-width: 715px;
+code {
+  white-space: break-spaces;
 }
 
 button {

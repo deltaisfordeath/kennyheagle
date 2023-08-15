@@ -31,7 +31,7 @@ export default function SearchForm() {
   }
 
   return (
-    <div className="SearchForm-container page-container">
+    <div className="SearchForm-container">
       <div className="demo-project-description">
         This was a coding challenge I completed to demonstrate my skills with React and API requests before interviewing for my current position with Verizon. The requirements and source code can be viewed <a href='https://github.com/deltaisfordeath/React-SPA-Stack-Exchange-API' target='_blank' rel="noreferrer">here</a>.
       </div>
