@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Resume.scss';
 import { EXPERIENCE_ITEMS, EDUCATION_ITEMS, ExperienceItem } from './experience';
 import { Collapse } from '@mui/material';
+import { VisualTheme } from '../App';
 
 function TitleBlock() {
    return (
@@ -60,8 +61,8 @@ function ExperienceSection({ title, items }: { title: string, items: ExperienceI
    </div>
 }
 
-export default function Resume() {
-   return <div className='resume-container page-container'>
+export default function Resume({theme}: {theme: VisualTheme}) {
+   return <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)'} as React.CSSProperties} className={`resume-container page-container ${theme}`}>
       <TitleBlock />
 
       <div className="personal-statement">Technology obsessed, passionate engineer proficient in Front End Web Development technologies</div>

@@ -28,6 +28,12 @@
         border: 1px solid rgba(0, 0, 0, 0.5);
         box-shadow: 2px 2px 8px;
         background: white;
+
+    }
+
+    .dark {
+        background:rgba(0, 0, 0, 0.5);
+        color: rgb(194, 194, 194);
     }
 
     .app-topbar {
@@ -40,12 +46,22 @@
         gap: 20px;
         background: linear-gradient(to bottom, white, #c9effd50);
         border-bottom: 1px solid gray;
+
+        &-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
     }
 
     .app-header {
         font-size: 18px;
         padding: 15px 0;
         text-align: center;
+    }
+
+    .app-theme-icon {
+        margin-top: 5px;
     }
 
     .app-navigation {
