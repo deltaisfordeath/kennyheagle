@@ -17,7 +17,6 @@ function App() {
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    console.log(newTheme);
     window.localStorage.setItem('theme', newTheme);
     setTheme(newTheme);
   }
@@ -40,7 +39,6 @@ function App() {
   useEffect(() => {
 
     function handleResize() {
-      console.log(window.innerWidth, window.innerWidth > 679, showNav);
       if(window.innerWidth >= 680 && showNav) {
         setShowNav(false);
       }
