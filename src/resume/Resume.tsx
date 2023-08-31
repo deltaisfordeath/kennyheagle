@@ -65,7 +65,7 @@ export default function Resume({theme}: {theme: VisualTheme}) {
    return <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)'} as React.CSSProperties} className={`resume-container page-container ${theme}`}>
       <TitleBlock />
 
-      <div className="personal-statement">Technology obsessed, passionate engineer proficient in Front End Web Development technologies</div>
+      <div className="personal-statement">Passionate about coding since my first Java class in 2008. Proficient in Front End Web Development.</div>
 
       <ExperienceSection title="Experience" items={EXPERIENCE_ITEMS} />
       <ExperienceSection title="Education" items={EDUCATION_ITEMS} />
@@ -78,16 +78,19 @@ export default function Resume({theme}: {theme: VisualTheme}) {
                   <div className="skills-item">Proficient in programming languages: Java, Typescript, and Python.</div>
                </li>
                <li>
-                  <div className="skills-item">Proficient in HTML and CSS/SCSS</div>
+                  <div className="skills-item">Proficient in HTML and CSS/SCSS.</div>
                </li>
                <li>
-                  <div className="skills-item">Experienced with unit testing/Jest</div>
+                  <div className="skills-item">Experienced with unit testing with Jest, and end-to-end testing with Playwright.</div>
                </li>
                <li>
-                  <div className="skills-item">Proficient in front-end libraries: React, Redux, RxJS, MobX, Material UI, Bootstrap</div>
+                  <div className="skills-item">Proficient in web development libraries: React, Redux, NextJS, GatsbyJS, RxJS, MobX, Material UI, Bootstrap.</div>
                </li>
                <li>
-                  <div className="skills-item">Experienced interfacing with APIs and building APIs using Node and Python</div>
+                  <div className="skills-item">Experienced interfacing with REST and GraphQL APIs and building APIs using Node and Python.</div>
+               </li>
+               <li>
+                  <div className="skills-item">Keen attention to detail. Highly motivated self-starter. Excellent at prioritization and time management.</div>
                </li>
             </ul>
 

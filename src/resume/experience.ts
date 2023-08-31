@@ -8,9 +8,9 @@ export type ExperienceItem = {
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     {
         dateRange: 'FEB 2022 - PRESENT',
-        title: 'FRONT END ENGINEER II (CONTRACTOR)',
+        title: 'FRONT END ENGINEER II',
         venue: 'VERIZON',
-        description: 'Worked on a team developing a collaborative whiteboarding web app using React, MobX, RxJS, and other technologies. Worked on developing a rich, professional quality, multi-layer video streaming web app using React, Redux, Material UI, and other technologies. Received year end spotlight recognizing my outsized contributions to the projects I was assigned.'
+        description: 'Developed clean, scalable, reusable React components and features for BlueJeans Collab Board, a collaborative, low latency whiteboarding app with support for up to 1000 concurrent users. Contributions included a highly praised text autoscaling feature, creation of reusable whiteboard templates, grouped drawing alignment and positioning enhancements, and numerous other features.\n\nImplemented service classes and components for chat interfaces, live polling, and QnA for BlueJeans Studio, winner of Enterprise Connect 2022 “Best Innovation for Virtual Meetings." Studio is a rich, professional quality, multi-layer video streaming web app using React/Typescript, Redux, Material UI, Java, and other technologies. Participated in technical design discussions and code reviews.\n\nReceived year end spotlight recognizing my outsized contributions to the above projects.'
     },
     {
         dateRange: 'MAY 2013 – FEB 2022',
