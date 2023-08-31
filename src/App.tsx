@@ -32,7 +32,7 @@ function App() {
   }, [page, theme]);
 
   return (
-    <div className='app-container'>
+    <div className={`app-container ${theme}`}>
       <div className='app-topbar'>
         <div className='app-topbar-left'>
           <div className='app-header'>Welcome to my page!</div>

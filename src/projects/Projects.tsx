@@ -18,8 +18,8 @@ export default function Projects({theme}: {theme: VisualTheme}) {
 
   return <div className="project-container">
     <div className="project-navigation">
-      <div className="project-navigation-button" onClick={() => setSelectedProject('searchForm')}>Stack API</div>
-      <div className="project-navigation-button" onClick={() => setSelectedProject('loanAmortization')}>Loan Calculator</div>
+      <div className={`project-navigation-button ${theme}`} onClick={() => setSelectedProject('searchForm')}>Stack API</div>
+      <div className={`project-navigation-button ${theme}`} onClick={() => setSelectedProject('loanAmortization')}>Loan Calculator</div>
     </div>
     <div className={`page-container ${theme}`}>
       {getSelectedProject()}
