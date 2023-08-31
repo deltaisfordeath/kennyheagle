@@ -11,7 +11,7 @@
         justify-content: center;
         width: 100%;
 
-        min-height: calc(100vh - 76px);
+        min-height: calc(100vh - 84px);
     }
 
     .page-container {
@@ -47,10 +47,24 @@
             display: flex;
             align-items: center;
             gap: 15px;
+
+            .kenny-heagle-logo {
+                display: inline-block;
+                padding: 2px;
+                margin: 0 5px;
+                width: 36px;
+                border-radius: 5px;
+                border: 1.5px solid black;
+                
+                &.dark {
+                    border-color:rgb(194, 194, 194);
+                }
+            }
         }
     }
 
     .app-header {
+        white-space: nowrap;
         font-size: 18px;
         padding: 15px 0;
         text-align: center;
@@ -58,16 +72,44 @@
 
     .app-theme-icon {
         margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .app-navigation-menu-button {
+        cursor: pointer;
+        padding: 10px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     .app-navigation {
         display: flex;
-        gap: 10px;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        position: absolute;
+        top: 59px;
+        right: 0;
+        color: black;
+        background: rgb(194, 194, 194);
+        border-radius: 3px;
         align-items: center;
+        transition: height 0.2s ease;
+
+        &.expanded {
+            height: unset;
+            border: 1px solid black;
+        }
 
         .navigation-button {
             text-align: center;
             text-transform: uppercase;
+            width: 60vw;
+            padding: 15px 0;
+            border-bottom: 0.5px solid black;
             cursor: pointer;
 
             &.selected {
@@ -106,7 +148,7 @@
         }
 
         .app-navigation {
-            gap: 20px;
+            top: 83px;
         }
     }
 }
@@ -118,9 +160,31 @@
             padding: 10px 40px;
         }
 
-        .app-navigation {
-            gap: 30px;
+    }
+}
+
+@media (min-width: 680px) {
+    .app-container {
+
+        .app-navigation-menu-button {
+            display: none;
         }
 
+        .app-navigation {
+            position: unset;
+            height: unset;
+            flex-direction: row;
+            gap: 30px;
+            border: none;
+            background: unset;
+
+            .navigation-button {
+                padding: 0;
+                border: none;
+                width: unset;
+            }
+            
+        }
     }
+    
 }
