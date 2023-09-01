@@ -43,27 +43,24 @@
         font-family: 'Fira Sans', sans-serif;
         border-bottom: 1px solid black;
 
-        &-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-
-            .kenny-heagle-logo {
-                display: inline-block;
-                padding: 2px;
-                margin: 0 5px;
-                width: 36px;
-                border-radius: 5px;
-                border: 1.5px solid black;
-                
-                &.dark {
-                    border-color:rgb(194, 194, 194);
-                }
+        .kenny-heagle-logo {
+            display: inline-block;
+            padding: 2px;
+            margin: 0 8px;
+            width: 20px;
+            height: 20px;
+            background-image: url(../public/logo128.png);
+            background-size: contain;
+            
+            &.dark {
+                background-image: url(../public/logo128-gray.png);
             }
         }
     }
 
     .app-header {
+        text-transform: uppercase;
+        display: flex;
         white-space: nowrap;
         font-size: 18px;
         padding: 15px 0;
