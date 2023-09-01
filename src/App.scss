@@ -1,3 +1,6 @@
+$dark-background: rgba(50, 50, 50);
+$dark-text: rgb(194, 194, 194);
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -24,13 +27,13 @@
         max-width: 920px;
 
         &.dark {
-            border-color: rgb(194, 194, 194);
+            border-color: $dark-text;
         }
     }
 
     &.dark {
-        background:rgba(0, 0, 0, 0.8);
-        color: rgb(194, 194, 194);
+        background:$dark-background;
+        color: $dark-text;
     }
 
     .app-topbar {
@@ -45,7 +48,11 @@
         gap: 20px;
         font-family: 'Fira Sans', sans-serif;
         border-bottom: 1px solid black;
-        background:rgb(80, 80, 80);
+        background: white;
+
+        &.dark {
+            background:rgb(80, 80, 80);
+        }
 
         .kenny-heagle-logo {
             display: inline-block;
@@ -95,13 +102,18 @@
         top: 59px;
         right: 0;
         color: black;
-        background: rgb(194, 194, 194);
+        background: $dark-text;
         border-radius: 3px;
         align-items: center;
         transition: height 0.2s ease;
 
+        &.dark {
+            color: $dark-text;
+        }
+
         &.expanded {
             height: unset;
+            color: black;
             border: 1px solid black;
         }
 
