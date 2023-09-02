@@ -72,6 +72,7 @@ $dark-text: rgb(194, 194, 194);
     .app-header {
         text-transform: uppercase;
         display: flex;
+        cursor: pointer;
         white-space: nowrap;
         font-size: 18px;
         padding: 15px 0;

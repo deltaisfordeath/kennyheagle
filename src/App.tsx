@@ -61,7 +61,7 @@ function App() {
   return (
     <div className={`app-container ${theme}`}>
       <div className={`app-topbar ${theme}`}>
-        <div className='app-header'>Kenny <div className={`kenny-heagle-logo ${theme}`} /> Heagle</div>
+        <div className='app-header' onClick={() => setPage('about')}>Kenny <div className={`kenny-heagle-logo ${theme}`} /> Heagle</div>
         <div className='app-theme-icon' onClick={toggleTheme}>{theme === 'light' ? <LightModeIcon /> : <DarkModeIcon />}</div>
         <div id='nav-menu-button' className="app-navigation-menu-button" onClick={toggleNavMenu}>
             <MenuIcon sx={{pointerEvents: 'none'}} />
