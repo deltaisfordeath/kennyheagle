@@ -75,12 +75,6 @@ function App() {
       <div className="app-page">
         {renderPage()}
       </div>
-      <div className='home-footer-text'>
-        <div className='footer-line'>
-          This page is a work in progress.&nbsp;
-          {`Development started ${(Math.floor((Date.now() - new Date('May 7, 2023').getTime()) / (1000 * 60 * 60 * 24)))} days ago.`}
-        </div>
-      </div>
     </div>
   );
 }

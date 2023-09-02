@@ -133,15 +133,6 @@ $dark-text: rgb(194, 194, 194);
             }
         }
     }
-
-    .home-footer-text {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        padding: 8px 0;
-        font-size: 9px;
-        text-align: center;
-    }
 }
 
 @media (min-width: 480px) {
