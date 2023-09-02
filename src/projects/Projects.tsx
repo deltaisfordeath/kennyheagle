@@ -12,7 +12,7 @@ export default function Projects({theme}: {theme: VisualTheme}) {
       case 'searchForm':
         return <SearchForm />;
       case 'loanAmortization':
-        return <AmortizationSchedule />;
+        return <AmortizationSchedule theme={theme} />;
     }
   }
 

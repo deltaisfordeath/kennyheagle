@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import './AmortizationSchedule.css';
+import { VisualTheme } from '../../App';
 
 type PaymentItem = {
     number: number,
@@ -8,7 +9,7 @@ type PaymentItem = {
     balance: number;
 };
 
-export default function AmortizationSchedule() {
+export default function AmortizationSchedule({theme}: {theme: VisualTheme}) {
     const [principal, setPrincipal] = useState(null);
     const [interest, setInterest] = useState(null);
     const [periods, setPeriods] = useState(null);
@@ -83,7 +84,7 @@ export default function AmortizationSchedule() {
                     </thead>
                     <tbody>
                         {payments.map((pmt, idx) => {
-                            return <tr key={idx} className={`payment-row ${idx % 2 === 0 ? '' : 'gray-background'}`}>
+                            return <tr key={idx} className={`payment-row ${idx % 2 === 0 ? '' : 'gray-background'} ${theme}`}>
                                 <td>{pmt.number}</td>
                                 <td>${(pmt.interest).toLocaleString('en', {
                                     minimumFractionDigits: 2,
