@@ -39,6 +39,7 @@ $dark-text: rgb(194, 194, 194);
     .app-topbar {
         display: flex;
         position: fixed;
+        z-index: 100;
         top: 0;
         width: calc(100% - 10px);
         box-sizing: padding-box;
@@ -80,7 +81,9 @@ $dark-text: rgb(194, 194, 194);
     }
 
     .app-theme-icon {
-        margin-top: 5px;
+        position: absolute;
+        top: calc(50% - 12px);
+        left: calc(50% - 12px);
         cursor: pointer;
     }
 
