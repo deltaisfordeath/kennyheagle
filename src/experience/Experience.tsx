@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { VisualTheme } from '../App';
 import Resume from './resume/Resume';
+import Verizon from './verizon/Verizon';
 
 export default function Projects({theme}: {theme: VisualTheme}) {
   const [selectedPage, setSelectedPage] = useState('resume');
@@ -9,6 +10,8 @@ export default function Projects({theme}: {theme: VisualTheme}) {
     switch (selectedPage) {
       case 'resume':
         return <Resume theme={theme} />;
+      case 'verizon':
+        return <Verizon theme={theme} />
     }
   }
 

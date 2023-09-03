@@ -1,0 +1,70 @@
+.verizon-experience-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    padding: 40px 20px;
+    gap: 20px;
+
+    .verizon-project-navigation {
+        display: flex;
+        font-size: 2em;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .verizon-project-button {
+            font-weight: bold;
+            width: 50%;
+            border-bottom: 2px solid;
+            padding: 5px 10px;
+            border-color: black;
+            opacity: 0.3;
+
+            &:last-of-type {
+                text-align: right;
+            }
+
+            &.dark {
+                border-color: rgb(194, 194, 194);
+            }
+
+            &.selected {
+                opacity: 1;
+                border: 2px solid;
+                border-bottom: none;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .verizon-experience-section {
+        display: flex;
+        gap: 20px;
+        padding: 30px;
+        border: 3px dotted rgb(194, 194, 194);
+        position: relative;
+        margin-bottom: 130px;
+    
+        .verizon-experience-text {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            width: calc(50% - 10px);
+        }
+    
+        .verizon-experience-image {
+            width:calc(50% - 10px);
+            
+            img {
+                position: relative;
+                width: 100%;
+                opacity: 0;
+                transition: left 0.5s ease, top 0.5s ease, opacity 0.5s ease;
+    
+                .visible {
+                    left: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
