@@ -102,9 +102,14 @@ $gray-text: rgb(125, 125, 125);
             }
 
             .experience-item-venue {
+                padding-left: 8px;
                 text-align: right;
                 color: $gray-text;
             }
+
+            .experience-item-separator {
+                display: none;
+            };
         }
 
         .experience-item-description {
@@ -154,17 +159,6 @@ $gray-text: rgb(125, 125, 125);
         max-width: 500px;
         padding: 20px 40px;
 
-        .resume-section {
-            .experience-item-assignment {
-                justify-content: flex-start;
-                gap: 5px;
-
-                .experience-item-venue {
-                    text-align: left;
-                }
-            }
-        }
-
         .skills-section {
             ul {
                 columns: 2;
@@ -175,10 +169,26 @@ $gray-text: rgb(125, 125, 125);
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 810px) {
     .resume-container {
         font-size: 12.5px;
         max-width: 590px;
         padding: 50px 80px;
+
+        .resume-section {
+            .experience-item-assignment {
+                justify-content: flex-start;
+                gap: 5px;
+
+                .experience-item-venue {
+                    padding-left: 0;
+                    text-align: left;
+                }
+
+                .experience-item-separator {
+                    display: inline;
+                }
+            }
+        }
     }
 }

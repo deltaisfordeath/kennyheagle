@@ -16,7 +16,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
         dateRange: 'MAY 2013 – FEB 2022',
         title: 'ACCOUNTING SYSTEMS MANAGER',
         venue: 'ADVANCED GLAZING SOLUTIONS',
-        description: 'Managed all information technology, accounting, and compliance needs for a contracting firm in a small business environment. Automated monthly billing processes to reduce errors and increase productivity. Wrote Python scrips and Excel macros to aid in data validation for accounting records.'
+        description: 'This role involved total ownership of a wide variety of responsibilities ranging from architecting information systems to allow multiple users to have real-time access to company software and data, maintaining and validating accounting records, obtaining business licenses and certifications, and ensuring compliance with labor laws, to name just a few.\n\nAccordingly, this role required a self-starting attitude, strong attention to detail, and effective time management/prioritization. Additionally, this role required excellent communication skills as I had to coordinate between numerous parties inside and outside the company to ensure deadlines were met. When issues arose I took responsibility and communicated to stakeholders the circumstances and remediation steps that would be taken to resolve the matter.\n\nMy proudest accomplishment in this role was using Python scripts and Excel macros to automate several time wasting processes for the estimating/sales team, monthly billings, and release of lien rights, resulting in the company increasing revenues 288% year-over-year without having to increase headcount.'
     },
     {
         dateRange: 'FEB 2011 - MAY 2013',
@@ -34,21 +34,16 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
 
 export const EDUCATION_ITEMS: ExperienceItem[] = [
     {
-        dateRange: 'Graduating 2025',
+        dateRange: '2024',
         title: 'Master of Software Engineering',
         venue: 'North Dakota State University',
         description: ''
     },
     {
-        dateRange: 'Aug 2005 - Dec 2010',
-        title: 'B.S. IN ACCOUNTING',
+        dateRange: '2010',
+        title: 'B.S. in Accounting · Minor in Computer Science',
         venue: 'BRIGHAM YOUNG UNIVERSITY',
-        description: `Courses:
-        CS 100 – Fundamentals of Computing: Learned HTML, CSS, and Javascript.
-        CS 142 – Intro to Programming: Learned object oriented programming in Java.
-        CS 235 – Data Structures: Learned and constructed data structures in Java. Evaluated algorithm performance using Big O notation. Wrote Java applications with graphical user interfaces.
-        ISYS – 401 – Business and Accounting Information Systems: Learned relational databases/SQL.
-        `
+        description: ''
     }
 ]
 

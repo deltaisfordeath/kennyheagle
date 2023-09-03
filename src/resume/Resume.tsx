@@ -25,13 +25,15 @@ function RenderExperience({ items }: { items: ExperienceItem[] }) {
    return <>
       {items.map((item, index) => {
          return <div className="experience-item-container" key={`experience-item-${index}`}>
-            <div className="experience-item-dates">
+            {item.description !== '' && <div className="experience-item-dates">
                {item.dateRange}
-            </div>
+            </div>}
             <div className="experience-item-assignment">
                <div className="experience-item-position">
-                  {item.title},
+                  {item.description === '' ? item.dateRange + ' · ' : ''}
+                  {item.title}
                </div>
+               <span className="experience-item-separator">·</span>
                <div className="experience-item-venue">
                   {item.venue}
                </div>
@@ -78,19 +80,19 @@ export default function Resume({theme}: {theme: VisualTheme}) {
                   <div className="skills-item">Proficient in programming languages: Java, Typescript, and Python.</div>
                </li>
                <li>
-                  <div className="skills-item">Proficient in HTML and CSS/SCSS.</div>
+                  <div className="skills-item">Proficient in web development libraries: React, Redux, NextJS, GatsbyJS, RxJS, MobX, Material UI, Bootstrap.</div>
                </li>
                <li>
                   <div className="skills-item">Experienced with unit testing with Jest, and end-to-end testing with Playwright.</div>
                </li>
                <li>
-                  <div className="skills-item">Proficient in web development libraries: React, Redux, NextJS, GatsbyJS, RxJS, MobX, Material UI, Bootstrap.</div>
+                  <div className="skills-item">Proficient in HTML and CSS/SCSS.</div>
                </li>
                <li>
                   <div className="skills-item">Experienced interfacing with REST and GraphQL APIs and building APIs using Node and Python.</div>
                </li>
                <li>
-                  <div className="skills-item">Keen attention to detail. Highly motivated self-starter. Excellent at prioritization and time management.</div>
+                  <div className="skills-item">Keen attention to detail. Highly motivated self-starter. Excellent at prioritization and time management. Tenacious problem solver.</div>
                </li>
             </ul>
 
