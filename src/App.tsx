@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './App.scss';
-import Resume from './resume/Resume';
 import AboutMe from './about/AboutMe';
 import Projects from './projects/Projects';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import Experience from './experience/Experience';
 
-type KennyPage = 'projects' | 'about' | 'resume';
+type KennyPage = 'projects' | 'about' | 'experience';
 export type VisualTheme = 'light' | 'dark';
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
         return <AboutMe theme={theme} />
       case 'projects':
         return <Projects theme={theme} />
-      case 'resume':
-        return <Resume theme={theme} />
+      case 'experience':
+        return <Experience theme={theme} />
     }
   }, [page, theme]);
 
@@ -68,7 +68,7 @@ function App() {
         </div>
         <div className={`app-navigation ${theme} ${showNav ? 'expanded' : ''}`}>
           <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
-          <div className={`navigation-button ${page === 'resume' ? ' selected' : ''}`} onClick={() => { setPage('resume') }}>Resume</div>
+          <div className={`navigation-button ${page === 'experience' ? ' selected' : ''}`} onClick={() => { setPage('experience') }}>Experience</div>
           <div className={`navigation-button ${page === 'projects' ? ' selected' : ''}`} onClick={() => { setPage('projects') }}>Projects</div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Resume.scss';
 import { EXPERIENCE_ITEMS, EDUCATION_ITEMS, ExperienceItem } from './experience';
 import { Collapse } from '@mui/material';
-import { VisualTheme } from '../App';
+import { VisualTheme } from '../../App';
 
 function TitleBlock() {
    return (
