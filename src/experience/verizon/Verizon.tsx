@@ -7,13 +7,13 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
     const [selectedProject, setSelectedProject] = useState('collab');
 
     useEffect(() => {
-        const scroll = window.requestAnimationFrame || function(callback) {window.setTimeout(callback, 1000/60)};
+        const scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
 
         function handleImageAnimation(el: HTMLElement) {
-            const {top, bottom} = el.getBoundingClientRect();
+            const { top, bottom } = el.getBoundingClientRect();
             const image = el.children[0] as HTMLElement
 
-                        if (top > window.innerHeight - 100) {
+            if (top > window.innerHeight - 100) {
                 slideElementBottom(image);
             } else if (bottom < 180) {
                 slideElementRight(image);
@@ -22,7 +22,7 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
         }
 
         function handleTextAnimation(el: HTMLElement) {
-            const {top, bottom} = el.getBoundingClientRect();
+            const { top, bottom } = el.getBoundingClientRect();
 
             if (top > window.innerHeight - 100) {
                 el.style.opacity = '0';
@@ -39,12 +39,12 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
                 handleImageAnimation(images[i]);
                 handleTextAnimation(text[i]);
             }
-        
+
             scroll(scrollAnimationLoop);
         }
 
         scrollAnimationLoop();
-        
+
     }, [selectedProject, theme]);
 
     function slideElementRight(el: HTMLElement) {
@@ -67,7 +67,7 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
                 The first assignment I was placed on with Verizon was contributing to BlueJeans Collab Board, a dynamic virtual whiteboard integrated with BlueJeans Meetings. Collab Board boasted an infinite canvas; real time, low latency collaboration; and support for up to 1000 concurrent users. Over the span of just a few short months, I had made considerable contributions throughout the Collab Board component tree, and had become knowledgeable and competent with the app&apos;s design patterns and architecture. My manager had some discussions with me about having me take over technical leadership of Collab Board, but then word came from higher up the chain of command that I was to be reassigned to Studio, a higher-priority BlueJeans project. Below is a small subset of my contributions to Collab Board.
             </div>
             {VERIZON_EXPERIENCE.map((feature, idx) => <div key={idx} className="verizon-experience-section">
-                <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)'} as React.CSSProperties} className="verizon-experience-text">
+                <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)' } as React.CSSProperties} className="verizon-experience-text">
                     <div><span className="problem-solution">Problem:</span> {feature.problem}</div>
                     <div><span className="problem-solution">Solution:</span> {feature.solution}</div>
                 </div>
