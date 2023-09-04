@@ -4,7 +4,7 @@ import Resume from './resume/Resume';
 import Verizon from './verizon/Verizon';
 
 export default function Projects({theme}: {theme: VisualTheme}) {
-  const [selectedPage, setSelectedPage] = useState('resume');
+  const [selectedPage, setSelectedPage] = useState('verizon');
 
   function getSelectedProject() {
     switch (selectedPage) {

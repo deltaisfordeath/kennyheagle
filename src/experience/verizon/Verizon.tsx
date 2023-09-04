@@ -1,10 +1,10 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { VisualTheme } from '../../App';
 import './Verizon.scss';
+import { VERIZON_EXPERIENCE } from './verizon-experience';
 
 export default function Verizon({ theme }: { theme: VisualTheme }) {
     const [selectedProject, setSelectedProject] = useState('collab');
-    const [imagesLoaded, setImagesLoaded] = useState(false);
 
     useLayoutEffect(() => {
         const images = document.querySelectorAll('.verizon-experience-image > img') as NodeListOf<HTMLImageElement>;
@@ -21,18 +21,21 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
 
             const text = el.children[0] as HTMLElement;
             const image = el.children[1].children[0] as HTMLElement;
-            console.log(text, image);
             if (top >= 0 && bottom <= window.innerHeight) {
-                console.log('clearing animation styles');
-                clearAnimationStyles(text);
                 clearAnimationStyles(image);
+                clearAnimationStyles(text);
                 return;
             } else if (top < 0) {
                 slideElementRight(image);
             } else {
                 slideElementBottom(image);
             }
-            text.style.opacity = '0';
+
+            if (top >= 0 && top < window.innerHeight) {
+                clearAnimationStyles(text);
+            } else {
+                text.style.opacity = '0'
+            };
 
         }
 
@@ -48,7 +51,7 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
 
         scrollAnimationLoop();
         
-    }, [imagesLoaded]);
+    }, [selectedProject, theme]);
 
     function slideElementRight(el: HTMLElement) {
         el.style.left = window.innerWidth - el.clientWidth + 'px';
@@ -69,38 +72,15 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
             <div>
                 The first assignment I was placed on with Verizon was contributing to BlueJeans Collab Board, a dynamic virtual whiteboard integrated with BlueJeans Meetings. Collab Board boasted an infinite canvas; real time, low latency collaboration; and support for up to 1000 concurrent users.
             </div>
-            <div className="verizon-experience-section">
-                <div className="verizon-experience-text">
-                    I coded a feature that enabled easy alignment of groups of shapes.
+            {VERIZON_EXPERIENCE.map((feature, idx) => <div key={idx} className="verizon-experience-section">
+                <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)'} as React.CSSProperties} className="verizon-experience-text">
+                    <div><span className="problem-solution">Problem:</span> {feature.problem}</div>
+                    <div><span className="problem-solution">Solution:</span> {feature.solution}</div>
                 </div>
                 <div className="verizon-experience-image">
-                    <img src="./img/GroupAlign.gif" alt="Easily align groups of images" />
+                    <img src={feature.image} alt={feature.imageAlt} />
                 </div>
-            </div>
-            <div className="verizon-experience-section">
-                <div className="verizon-experience-text">
-                    I coded a feature making it easy to draw straight lines.
-                </div>
-                <div className="verizon-experience-image">
-                    <img src="./img/Penstroke.gif" alt="Easily draw perfectly straight lines" />
-                </div>
-            </div>
-            <div className="verizon-experience-section">
-                <div className="verizon-experience-text">
-                    I coded a feature making it easy to draw straight lines.
-                </div>
-                <div className="verizon-experience-image">
-                    <img src="./img/PerfectShape.gif" alt="Easily draw perfectly straight lines" />
-                </div>
-            </div>
-            <div className="verizon-experience-section">
-                <div className="verizon-experience-text">
-                    I coded a feature making it easy to draw straight lines.
-                </div>
-                <div className="verizon-experience-image">
-                    <img onLoad={() => setImagesLoaded(true)} src="./img/SwitchShape.gif" alt="Easily draw perfectly straight lines" />
-                </div>
-            </div>
+            </div>)}
         </>
         )
     }

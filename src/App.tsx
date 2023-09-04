@@ -67,9 +67,9 @@ function App() {
             <MenuIcon sx={{pointerEvents: 'none'}} />
         </div>
         <div className={`app-navigation ${theme} ${showNav ? 'expanded' : ''}`}>
-          <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
           <div className={`navigation-button ${page === 'experience' ? ' selected' : ''}`} onClick={() => { setPage('experience') }}>Experience</div>
           <div className={`navigation-button ${page === 'projects' ? ' selected' : ''}`} onClick={() => { setPage('projects') }}>Projects</div>
+          <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
         </div>
       </div>
       <div className="app-page">

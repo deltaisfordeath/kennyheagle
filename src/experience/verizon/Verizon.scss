@@ -1,3 +1,5 @@
+$blue-text: var(--resume-text-accent);
+
 .verizon-experience-container {
     display: flex;
     flex-direction: column;
@@ -45,9 +47,19 @@
         margin-bottom: 130px;
     
         .verizon-experience-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 1s ease;
             width: calc(50% - 10px);
+            
+            .problem-solution {
+                font-weight: bold;
+                text-decoration: underline;
+                text-transform: uppercase;
+                color: $blue-text;
+            }
         }
     
         .verizon-experience-image {

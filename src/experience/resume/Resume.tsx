@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import './Resume.scss';
-import { EXPERIENCE_ITEMS, EDUCATION_ITEMS, ExperienceItem } from './experience';
+import { EXPERIENCE_ITEMS, EDUCATION_ITEMS, ExperienceItem } from './resume-experience';
 import { Collapse } from '@mui/material';
 import { VisualTheme } from '../../App';
 
