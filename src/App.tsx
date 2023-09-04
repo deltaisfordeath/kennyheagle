@@ -11,7 +11,7 @@ type KennyPage = 'projects' | 'about' | 'experience';
 export type VisualTheme = 'light' | 'dark';
 
 function App() {
-  const [page, setPage] = useState<KennyPage>('about');
+  const [page, setPage] = useState<KennyPage>('experience');
   const [theme, setTheme] = useState<VisualTheme>(window.localStorage.getItem('theme') as VisualTheme ?? 'light');
   const [showNav, setShowNav] = useState<Boolean>(false);
 
