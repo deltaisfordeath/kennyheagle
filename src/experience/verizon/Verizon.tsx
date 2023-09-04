@@ -6,44 +6,38 @@ import { VERIZON_EXPERIENCE } from './verizon-experience';
 export default function Verizon({ theme }: { theme: VisualTheme }) {
     const [selectedProject, setSelectedProject] = useState('collab');
 
-    useLayoutEffect(() => {
-        const images = document.querySelectorAll('.verizon-experience-image > img') as NodeListOf<HTMLImageElement>;
-        for (let i = 0; i < images.length; ++i) {
-            slideElementBottom(images[i]);
-        }
-    }, [])
-
     useEffect(() => {
         const scroll = window.requestAnimationFrame || function(callback) {window.setTimeout(callback, 1000/60)};
 
-        function handleElementAnimation(el: HTMLElement) {
+        function handleImageAnimation(el: HTMLElement) {
             const {top, bottom} = el.getBoundingClientRect();
+            const image = el.children[0] as HTMLElement
 
-            const text = el.children[0] as HTMLElement;
-            const image = el.children[1].children[0] as HTMLElement;
-            if (top >= 0 && bottom <= window.innerHeight) {
-                clearAnimationStyles(image);
-                clearAnimationStyles(text);
-                return;
-            } else if (top < 0) {
-                slideElementRight(image);
-            } else {
+            if (top > window.innerHeight - 100) {
                 slideElementBottom(image);
-            }
-
-            if (top >= 0 && top < window.innerHeight) {
-                clearAnimationStyles(text);
-            } else {
-                text.style.opacity = '0'
-            };
+            } else if (bottom < 180) {
+                slideElementRight(image);
+            } else clearAnimationStyles(image);
 
         }
 
-        const sections = document.querySelectorAll('.verizon-experience-section') as NodeListOf<HTMLDivElement>;
+        function handleTextAnimation(el: HTMLElement) {
+            const {top, bottom} = el.getBoundingClientRect();
+
+            if (top > window.innerHeight - 100) {
+                el.style.opacity = '0';
+            } else if (bottom < 120) {
+                el.style.opacity = '0';
+            } else el.style.opacity = '1';
+        }
 
         function scrollAnimationLoop() {
-            for (let i = 0; i < sections.length; ++i) {
-                handleElementAnimation(sections[i]);
+            const images = document.querySelectorAll('.verizon-experience-image') as NodeListOf<HTMLElement>;
+            const text = document.querySelectorAll('.verizon-experience-text') as NodeListOf<HTMLElement>;
+
+            for (let i = 0; i < images.length; ++i) {
+                handleImageAnimation(images[i]);
+                handleTextAnimation(text[i]);
             }
         
             scroll(scrollAnimationLoop);
@@ -54,11 +48,11 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
     }, [selectedProject, theme]);
 
     function slideElementRight(el: HTMLElement) {
-        el.style.left = window.innerWidth - el.clientWidth + 'px';
+        el.style.left = window.visualViewport.width + 'px';
     }
 
     function slideElementBottom(el: HTMLElement) {
-        el.style.top = window.innerHeight - el.clientHeight + 'px';
+        el.style.top = window.visualViewport.height + 'px';
     }
 
     function clearAnimationStyles(el: HTMLElement) {

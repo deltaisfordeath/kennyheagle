@@ -40,6 +40,7 @@ $blue-text: var(--resume-text-accent);
 
     .verizon-experience-section {
         display: flex;
+        flex-direction: column;
         gap: 20px;
         padding: 30px;
         border: 3px dotted rgb(194, 194, 194);
@@ -52,7 +53,6 @@ $blue-text: var(--resume-text-accent);
             gap: 8px;
             opacity: 0;
             transition: opacity 1s ease;
-            width: calc(50% - 10px);
             
             .problem-solution {
                 font-weight: bold;
@@ -63,7 +63,7 @@ $blue-text: var(--resume-text-accent);
         }
     
         .verizon-experience-image {
-            width:calc(50% - 10px);
+            position: relative;
             
             img {
                 position: relative;
@@ -79,4 +79,17 @@ $blue-text: var(--resume-text-accent);
         }
     }
 
+}
+
+@media (min-width: 680px) {
+    .verizon-experience-container {
+        .verizon-experience-section {
+            flex-direction: row;
+
+            .verizon-experience-text, .verizon-experience-image {
+                width: calc(50% - 10px);
+            }
+        }
+    }
+    
 }
