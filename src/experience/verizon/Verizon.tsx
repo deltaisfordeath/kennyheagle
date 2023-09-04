@@ -64,7 +64,7 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
     function CollabBoard() {
         return (<>
             <div>
-                The first assignment I was placed on with Verizon was contributing to BlueJeans Collab Board, a dynamic virtual whiteboard integrated with BlueJeans Meetings. Collab Board boasted an infinite canvas; real time, low latency collaboration; and support for up to 1000 concurrent users. Over the span of just a few short months, I had made considerable contributions throughout the Collab Board component tree, and had become knowledgeable and competent with the app&apos;s design patterns and architecture. My manager had some discussions with me about having me take over technical leadership of Collab Board, but then word came from higher up the chain of command that I was to be reassigned to Studio, a higher-priority BlueJeans project. Below is a small subset of my contributions to Collab Board.
+                The first assignment I was placed on with Verizon was contributing to BlueJeans Collab Board, a dynamic virtual whiteboard integrated with BlueJeans Meetings. Collab Board boasted an infinite canvas; real time, low latency collaboration; and support for up to 1000 concurrent users. Collab Board was built using React, TypeScript, SASS, MobX, RxJS, Material UI, and Node.js, among other technologies. Over the span of just a few short months, I had made considerable contributions throughout the Collab Board component tree, and had become knowledgeable and competent with the app&apos;s design patterns and architecture. My manager had some discussions with me about having me take over technical leadership of Collab Board, but then word came from higher up the chain of command that I was to be reassigned to Studio, a higher-priority BlueJeans project. Below is a small subset of my contributions to Collab Board.
             </div>
             {VERIZON_EXPERIENCE.map((feature, idx) => <div key={idx} className="verizon-experience-section">
                 <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)' } as React.CSSProperties} className="verizon-experience-text">
@@ -81,7 +81,9 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
 
     function Studio() {
         return (<>
-            This page is under active development, check back soon!
+            <div>
+                After proving myself on Collab Board, I was moved to a higher priority project, BlueJeans Studio. Studio is a virtual meeting platform that won the Enterprise Connect 2022 “Best Innovation for Virtual Meetings" award. Studio allowed for rich presentations by layering video and audio feeds from up to 9 concurrent panelists with overlays such as nametags, lower thirds, tickers, and other features commonly seen on professional news broadcasts. Studio was built using React, TypeScript, SASS, MobX, RxJS, Material UI, Java, Spring, and CasparCG, among other technologies.
+            </div>
         </>)
     }
 
