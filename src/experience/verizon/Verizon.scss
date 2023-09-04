@@ -58,7 +58,7 @@ $blue-text: var(--resume-text-accent);
             flex-direction: column;
             gap: 8px;
             opacity: 0;
-            transition: opacity 1s ease;
+            transition: opacity 1.3s ease;
 
             .problem-solution {
                 font-weight: bold;
