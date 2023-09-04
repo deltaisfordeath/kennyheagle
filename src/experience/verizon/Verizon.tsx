@@ -13,7 +13,7 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
             const {top, bottom} = el.getBoundingClientRect();
             const image = el.children[0] as HTMLElement
 
-            if (top > window.innerHeight - 100) {
+                        if (top > window.innerHeight - 100) {
                 slideElementBottom(image);
             } else if (bottom < 180) {
                 slideElementRight(image);
