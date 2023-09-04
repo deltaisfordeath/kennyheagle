@@ -41,11 +41,17 @@ $blue-text: var(--resume-text-accent);
     .verizon-experience-section {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 20px;
         padding: 30px;
         border: 3px dotted rgb(194, 194, 194);
         position: relative;
-        margin-bottom: 130px;
+        margin-bottom: 100px;
+        overflow: hidden;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
 
         .verizon-experience-text {
             display: flex;
@@ -65,12 +71,13 @@ $blue-text: var(--resume-text-accent);
         .verizon-experience-image {
             position: relative;
             display: flex;
+            width: 210px;
+            height: 170px;
             justify-content: center;
 
             img {
-                position: relative;
+                position: absolute;
                 width: 100%;
-                max-width: 350px;
                 transition: left 0.5s ease, top 0.5s ease, opacity 0.5s ease;
 
                 .visible {
@@ -88,8 +95,9 @@ $blue-text: var(--resume-text-accent);
         font-size: 14px;
 
         .verizon-experience-section {
-            .verizon-experience-image > img {
-                max-width: 420px;
+            .verizon-experience-image {
+                width: 350px;
+                height: 285px;
             }
         }
     }
@@ -109,15 +117,27 @@ $blue-text: var(--resume-text-accent);
         .verizon-experience-section {
             flex-direction: row;
 
-            .verizon-experience-text,
-            .verizon-experience-image {
+            .verizon-experience-text {
                 width: calc(50% - 10px);
-                height: unset;
-
+            }
+            .verizon-experience-image {
+                height: 240px;
+                width: calc(50% - 10px);
+                
                 > img {
-                    width: 100%;
+                    max-height: 100%;
                     object-fit: contain;
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .verizon-experience-container {
+        .verizon-experience-section {
+            .verizon-experience-image {
+                height: 300px;
             }
         }
     }
