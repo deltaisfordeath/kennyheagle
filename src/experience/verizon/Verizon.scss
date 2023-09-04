@@ -46,14 +46,14 @@ $blue-text: var(--resume-text-accent);
         border: 3px dotted rgb(194, 194, 194);
         position: relative;
         margin-bottom: 130px;
-    
+
         .verizon-experience-text {
             display: flex;
             flex-direction: column;
             gap: 8px;
             opacity: 0;
             transition: opacity 1s ease;
-            
+
             .problem-solution {
                 font-weight: bold;
                 text-decoration: underline;
@@ -61,15 +61,18 @@ $blue-text: var(--resume-text-accent);
                 color: $blue-text;
             }
         }
-    
+
         .verizon-experience-image {
             position: relative;
-                        
+            display: flex;
+            justify-content: center;
+
             img {
                 position: relative;
                 width: 100%;
+                max-width: 350px;
                 transition: left 0.5s ease, top 0.5s ease, opacity 0.5s ease;
-                
+
                 .visible {
                     left: 0px;
                     opacity: 1;
@@ -85,21 +88,37 @@ $blue-text: var(--resume-text-accent);
         font-size: 14px;
 
         .verizon-experience-section {
-            flex-direction: row;
-
-            .verizon-experience-text, .verizon-experience-image {
-                width: calc(50% - 10px);
-                height: unset;
+            .verizon-experience-image > img {
+                max-width: 420px;
             }
         }
     }
-    
+
 }
 
 @media (min-width: 800px) {
     .verizon-experience-container {
         .verizon-project-navigation {
             font-size: 1.8em;
+        }
+    }
+}
+
+@media (min-width: 920px) {
+    .verizon-experience-container {
+        .verizon-experience-section {
+            flex-direction: row;
+
+            .verizon-experience-text,
+            .verizon-experience-image {
+                width: calc(50% - 10px);
+                height: unset;
+
+                > img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
         }
     }
 }
