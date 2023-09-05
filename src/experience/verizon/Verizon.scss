@@ -3,7 +3,7 @@ $blue-text: var(--resume-text-accent);
 .verizon-experience-container {
     display: flex;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 1.25rem;
     gap: 20px;
 
     .verizon-project-navigation {
@@ -95,7 +95,7 @@ $blue-text: var(--resume-text-accent);
 
 @media (min-width: 680px) {
     .verizon-experience-container {
-        font-size: 14px;
+        font-size: 1.4rem;
 
         .verizon-experience-section {
             padding: 30px;
@@ -108,16 +108,19 @@ $blue-text: var(--resume-text-accent);
 
 }
 
-@media (min-width: 800px) {
+// @media (min-width: 800px) {
+//     .verizon-experience-container {
+//         .verizon-project-navigation {
+//             font-size: 1.8em;
+//         }
+//     }
+// }
+
+@media (min-width: 920px) {
     .verizon-experience-container {
         .verizon-project-navigation {
             font-size: 1.8em;
         }
-    }
-}
-
-@media (min-width: 920px) {
-    .verizon-experience-container {
         .verizon-experience-section {
             flex-direction: row;
 

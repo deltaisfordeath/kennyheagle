@@ -3,7 +3,7 @@ $gray-text: rgb(125, 125, 125);
 
 .resume-container {
     max-width: 320px;
-    font-size: 11.5px;
+    font-size: 1.15rem;
     font-family: 'Fira Sans', sans-serif;
 
     .resume-title-block {
@@ -171,7 +171,7 @@ $gray-text: rgb(125, 125, 125);
 
 @media (min-width: 810px) {
     .resume-container {
-        font-size: 12.5px;
+        font-size: 1.25rem;
         max-width: 590px;
         padding: 50px 80px;
 

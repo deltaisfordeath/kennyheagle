@@ -1,6 +1,10 @@
 $dark-background: rgba(50, 50, 50);
 $dark-text: rgb(194, 194, 194);
 
+html {
+    font-size: 62.5%;
+}
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -75,7 +79,7 @@ $dark-text: rgb(194, 194, 194);
         display: flex;
         cursor: pointer;
         white-space: nowrap;
-        font-size: 18px;
+        font-size: 1.8rem;
         padding: 15px 0;
         text-align: center;
     }
@@ -149,7 +153,7 @@ $dark-text: rgb(194, 194, 194);
         }
 
         .app-header {
-            font-size: 22px;
+            font-size: 2.2rem;
         }
 
         .app-navigation {
