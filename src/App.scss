@@ -23,9 +23,9 @@ $dark-text: rgb(194, 194, 194);
         padding: 20px 10px;
         border-radius: 5px;
         border: 1.5px solid #4a4a4a;
-        box-sizing: border-box;
-        width: 90%;
+        width: 88%;
         max-width: 920px;
+        box-sizing: border-box;
 
         &.dark {
             border-color: $dark-text;
