@@ -23,7 +23,7 @@ $dark-text: rgb(194, 194, 194);
         padding: 20px 10px;
         border-radius: 5px;
         border: 1.5px solid #4a4a4a;
-        width: 75%;
+        width: 85%;
         max-width: 920px;
 
         &.dark {
@@ -142,10 +142,6 @@ $dark-text: rgb(194, 194, 194);
     .app-container {
         padding-top: 76px;
 
-        .page-container {
-            padding: 40px 30px;
-        }
-
         .app-topbar {
             width: calc(100% - 40px);
             padding: 10px 20px;
@@ -166,6 +162,10 @@ $dark-text: rgb(194, 194, 194);
         .app-topbar {
             width: calc(100% - 80px);
             padding: 10px 40px;
+        }
+
+        .page-container {
+            padding: 40px 30px;
         }
 
     }

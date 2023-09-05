@@ -43,11 +43,15 @@ $blue-text: var(--resume-text-accent);
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        padding: 30px;
+        padding: 15px;
         border: 3px dotted rgb(194, 194, 194);
         position: relative;
         margin-bottom: 100px;
         overflow: hidden;
+
+        p {
+            margin-bottom: 0;
+        }
 
         &:last-of-type {
             margin-bottom: 0;
@@ -95,6 +99,7 @@ $blue-text: var(--resume-text-accent);
         font-size: 14px;
 
         .verizon-experience-section {
+            padding: 30px;
             .verizon-experience-image {
                 width: 350px;
                 height: 285px;
