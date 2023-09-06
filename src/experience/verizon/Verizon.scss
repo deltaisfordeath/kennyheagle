@@ -37,7 +37,7 @@ $blue-text: var(--resume-text-accent);
         }
     }
 
-    .verizon-experience-section {
+    .collab-experience-section {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -56,22 +56,16 @@ $blue-text: var(--resume-text-accent);
             margin-bottom: 0;
         }
 
-        .verizon-experience-text {
+        .collab-experience-text {
             display: flex;
             flex-direction: column;
             gap: 8px;
             opacity: 0;
             transition: opacity 1.3s ease;
 
-            .problem-solution {
-                font-weight: bold;
-                text-decoration: underline;
-                text-transform: uppercase;
-                color: $blue-text;
-            }
         }
 
-        .verizon-experience-image {
+        .collab-experience-image {
             position: relative;
             display: flex;
             width: 210px;
@@ -91,15 +85,93 @@ $blue-text: var(--resume-text-accent);
         }
     }
 
+    .studio-experience-section {
+        border-top: 3px dotted rgb(194, 194, 194);
+
+        .studio-dashboard-image-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+            margin: 0 auto;
+
+            .studio-dashboard-image {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-caption {
+                    font-size: 1.1rem;
+                    font-style: italic;
+                    padding: 5px 0;
+                }
+
+                > img {
+                    cursor: zoom-in;
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .problem-solution {
+        font-weight: bold;
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: $blue-text;
+        margin-right: 6px;
+    }
+
+}
+
+.studio-modal {
+    &-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: 1rem;
+    }
+
+    &-content {
+        position: relative;
+        max-width: 70vw;
+        max-height: 70vh;
+        cursor: zoom-out;
+
+        .studio-modal-caption {
+            position: absolute;
+            width: 70%;
+            text-align: center;
+            padding: 5px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: bold;
+            bottom: -40px;
+            left: 50%;
+            transform: translate(-50%);
+            box-shadow: 1px 1px 3px black;
+            background: white;
+        }
+
+        > img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+    }
 }
 
 @media (min-width: 680px) {
     .verizon-experience-container {
         font-size: 1.4rem;
 
-        .verizon-experience-section {
+        .collab-experience-section {
             padding: 30px;
-            .verizon-experience-image {
+            .collab-experience-image {
                 width: 350px;
                 height: 285px;
             }
@@ -108,26 +180,18 @@ $blue-text: var(--resume-text-accent);
 
 }
 
-// @media (min-width: 800px) {
-//     .verizon-experience-container {
-//         .verizon-project-navigation {
-//             font-size: 1.8em;
-//         }
-//     }
-// }
-
 @media (min-width: 920px) {
     .verizon-experience-container {
         .verizon-project-navigation {
             font-size: 1.8em;
         }
-        .verizon-experience-section {
+        .collab-experience-section {
             flex-direction: row;
 
-            .verizon-experience-text {
+            .collab-experience-text {
                 width: calc(50% - 10px);
             }
-            .verizon-experience-image {
+            .collab-experience-image {
                 height: 240px;
                 width: calc(50% - 10px);
                 
@@ -142,8 +206,8 @@ $blue-text: var(--resume-text-accent);
 
 @media (min-width: 1200px) {
     .verizon-experience-container {
-        .verizon-experience-section {
-            .verizon-experience-image {
+        .collab-experience-section {
+            .collab-experience-image {
                 height: 300px;
             }
         }

@@ -1,18 +1,11 @@
-export type VerizonExperienceOutcome = {
+export type CollabBoardExperienceItem = {
     problem: string;
     solution: JSX.Element;
     image: string;
     imageAlt: string;
 }
 
-// {
-//     problem: '',
-//     solution: '',
-//     image: '',
-//     imageAlt: '',
-// },
-
-export const VERIZON_EXPERIENCE: VerizonExperienceOutcome[] = [
+export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
     {
         problem: 'When a user is adding text or resizing a shape, the text can overflow and get cut off, requiring the user to manually resize the shape or find a text size that does not overflow. The product owner and design team had not devised a specified solution when this JIRA ticket was assigned to me.',
         solution: <>
