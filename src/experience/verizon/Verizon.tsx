@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { VisualTheme } from '../../App';
 import './Verizon.scss';
 import { COLLAB_BOARD_EXPERIENCE } from './verizon-experience';
-import { Modal } from '@mui/material';
+import { Modal, Portal } from '@mui/material';
 
 interface ImageModal {
   src: string,
@@ -93,7 +93,10 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
           <div><span className="problem-solution">Problem:</span>{feature.problem}</div>
           <div><span className="problem-solution">Solution:</span>{feature.solution}</div>
         </div>
-        <div className="collab-experience-image">
+        <div onClick={() => {
+          setImageModal({src: feature.image, alt: feature.imageAlt, caption: feature.imageCaption})
+        }}
+        className="collab-experience-image">
           <img src={feature.image} alt={feature.imageAlt} />
         </div>
       </div>)}
@@ -103,23 +106,6 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
 
   function Studio() {
     return (<div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)' } as React.CSSProperties}>
-      {!!imageModal && <Modal
-        open={true}
-        onClose={() => {setImageModal(null)}}
-        onClick={() => setImageModal(null)}
-        aria-labelledby={imageModal?.alt}
-        aria-describedby={`${imageModal?.alt} enlarged`}
-      >
-        <div className="studio-modal-background">
-          <div className="studio-modal-content">
-            <img src={imageModal.src} alt={imageModal.alt} />
-            <div className="studio-modal-caption">
-              {imageModal.caption}
-            </div>
-          </div>
-        </div>
-      </Modal>}
-
       <div>
         <p>
           After proving myself on Collab Board, I was moved to a higher priority project, BlueJeans Studio.
@@ -169,10 +155,10 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
         <div className="studio-dashboard-image-group">
           <div className="studio-dashboard-image" onClick={
             () => setImageModal({
-              src: './img/ModeratorDashboard.png', 
+              src: './img/ModeratorDashboard.png',
               alt: 'The Studio Moderator Dashboard',
               caption: 'Studio Moderator Dashboard'
-              })}>
+            })}>
             <img src="./img/ModeratorDashboard.png" alt="The Studio Moderator Dashboard" />
             <div className="studio-dashboard-image-caption">
               Studio Moderator Dashboard
@@ -180,10 +166,10 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
           </div>
           <div onClick={
             () => setImageModal({
-              src: './img/PresenterDashboard.png', 
+              src: './img/PresenterDashboard.png',
               alt: 'The Studio Presenter Dashboard',
               caption: 'Studio Presenter Dashboard'
-              })} className="studio-dashboard-image">
+            })} className="studio-dashboard-image">
             <img src="./img/PresenterDashboard.png" alt="The Studio Presenter Dashboard" />
             <div className="studio-dashboard-image-caption">
               Studio Presenter Dashboard
@@ -197,6 +183,22 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
   }
 
   return <div className={`verizon-experience-container page-container ${theme}`}>
+    {!!imageModal && <Modal
+        open={true}
+        onClose={() => {setImageModal(null)}}
+        onClick={() => setImageModal(null)}
+        aria-labelledby={imageModal?.alt}
+        aria-describedby={`${imageModal?.alt} enlarged`}
+      >
+        <div className="studio-modal-background">
+          <div className="studio-modal-content">
+            <img src={imageModal.src} alt={imageModal.alt} />
+            <div className="studio-modal-caption">
+              {imageModal.caption}
+            </div>
+          </div>
+        </div>
+      </Modal>}
     <div className="verizon-project-navigation">
       <div onClick={() => setSelectedProject('collab')} className={`verizon-project-button ${theme} ${selectedProject === 'collab' ? 'selected' : ''}`}>BlueJeans Collab Board</div>
       <div onClick={() => setSelectedProject('studio')} className={`verizon-project-button ${theme} ${selectedProject === 'studio' ? 'selected' : ''}`}>BlueJeans Studio</div>

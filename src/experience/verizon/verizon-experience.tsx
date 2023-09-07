@@ -3,6 +3,7 @@ export type CollabBoardExperienceItem = {
     solution: JSX.Element;
     image: string;
     imageAlt: string;
+    imageCaption: string;
 }
 
 export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
@@ -22,7 +23,8 @@ export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
             </p>
         </>,
         image: './img/AutoText.gif',
-        imageAlt: 'Text resizes automatically to fit the drawing container'
+        imageAlt: 'Text resizes automatically to fit the drawing container',
+        imageCaption: 'Autosizing Text'
     },
     {
         problem: 'Users needed a quick and easy way to achieve pixel-perfect alignment of drawings when creating flowcharts and other whiteboard documents.',
@@ -33,6 +35,7 @@ export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
         </>,
         image: './img/GroupAlign.gif',
         imageAlt: 'Easy alignment of multiple selected drawings',
+        imageCaption: 'Snap to Alignment'
     },
     {
         problem: "Users needed an effortless way to control the relative size and aspect ratio of individual shapes that make up a whiteboard.",
@@ -54,6 +57,7 @@ export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
         </>,
         image: './img/PerfectDimensions.gif',
         imageAlt: "Holding shift while creating a drawing creates a perfect square",
+        imageCaption: 'Easy Dimension Scaling'
     },
     {
         problem: 'When a user wanted to reuse drawings they had spent time and effort creating, they had to duplicate the entire board and then make any desired changes. This was inconvenient and suffered the limitation of only being able to copy drawings from one source board.',
@@ -65,6 +69,7 @@ export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
         </>,
         image: './img/Templates.gif',
         imageAlt: 'Place a predefined template anywhere on the canvas',
+        imageCaption: 'Easy to use Templates'
     },
     {
         problem: 'When creating flowcharts or other boards, users encountered situations where a change in proceedures necessitates changing a shape at a particular flowchart step. Replacing the shape involved creating a new shape, adding any text/styling, putting it in place of the removed shape and connecting any incoming/outgoing arrows to the new shape.',
@@ -74,5 +79,6 @@ export const COLLAB_BOARD_EXPERIENCE: CollabBoardExperienceItem[] = [
         </>,
         image: './img/SwitchShape.gif',
         imageAlt: 'Change one shape to another with the click of a mouse',
+        imageCaption: 'Easily Change Drawings'
     },
 ]
