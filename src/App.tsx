@@ -62,9 +62,9 @@ function App() {
     <div className={`app-container ${theme}`}>
       <div className={`app-topbar ${theme}`}>
         <div className='app-header' onClick={() => setPage('about')}>Kenny <div className={`kenny-heagle-logo ${theme}`} /> Heagle</div>
-        <div className='app-theme-icon' onClick={toggleTheme}>{theme === 'light' ? <LightModeIcon /> : <DarkModeIcon />}</div>
+        <div className='app-theme-icon' onClick={toggleTheme}>{theme === 'light' ? <LightModeIcon fontSize='large' /> : <DarkModeIcon />}</div>
         <div id='nav-menu-button' className="app-navigation-menu-button" onClick={toggleNavMenu}>
-            <MenuIcon sx={{pointerEvents: 'none'}} />
+            <MenuIcon fontSize='large' sx={{pointerEvents: 'none'}} />
         </div>
         <div className={`app-navigation ${theme} ${showNav ? 'expanded' : ''}`}>
           <div className={`navigation-button ${page === 'experience' ? ' selected' : ''}`} onClick={() => { setPage('experience') }}>Experience</div>
