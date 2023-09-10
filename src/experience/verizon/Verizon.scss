@@ -145,7 +145,8 @@ $blue-text: var(--resume-text-accent);
 
         .studio-modal-caption {
             position: absolute;
-            width: 70%;
+            white-space: nowrap;
+            min-width: fit-content;
             text-align: center;
             padding: 5px;
             border-radius: 3px;
