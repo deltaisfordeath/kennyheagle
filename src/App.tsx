@@ -1,20 +1,25 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import AboutMe from './about/AboutMe';
+import { DarkTooltip } from './components/DarkTooltip';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
-import Experience from './experience/Experience';
 import AmortizationSchedule from './projects/loan-amortization/AmortizationSchedule';
 import SearchForm from './projects/stack-api/SearchForm';
+import Verizon from './experience/verizon/Verizon';
+import Resume from './experience/resume/Resume';
 
-type KennyPage = 'loanAmortization' | 'stackApi' | 'about' | 'experience';
 export type VisualTheme = 'light' | 'dark';
 
 function App() {
-  const [page, setPage] = useState<KennyPage>('experience');
   const [theme, setTheme] = useState<VisualTheme>(window.localStorage.getItem('theme') as VisualTheme ?? 'dark');
   const [showNav, setShowNav] = useState<Boolean>(false);
+  const [showExperienceMenu, setShowExperienceMenu] = useState(false);
+  const [showProjectsMenu, setShowProjectsMenu] = useState(false);
+
+  const location = useLocation();
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -26,30 +31,40 @@ function App() {
     setShowNav(val => !val);
   }
 
-  const renderPage = useCallback(() => {
-    switch (page) {
-      case 'about':
-        return <AboutMe theme={theme} />;
-      case 'stackApi':
-        return <SearchForm theme={theme} />;
-      case 'loanAmortization':
-        return <AmortizationSchedule theme={theme} />;
-      case 'experience':
-        return <Experience theme={theme} />;
-    }
-  }, [page, theme]);
+  const toggleExperienceMenu = () => {
+    setShowProjectsMenu(false);
+    setShowExperienceMenu(val => !val)
+  }
+
+  const toggleProjectsMenu = () => {
+    setShowExperienceMenu(false);
+    setShowProjectsMenu(val => !val);
+  }
 
   useEffect(() => {
 
     function handleResize() {
-      if(window.innerWidth >= 680 && showNav) {
+      if (showExperienceMenu) {
+        setShowExperienceMenu(false);
+      }
+      if (showProjectsMenu) {
+        setShowProjectsMenu(false);
+      }
+      if (window.innerWidth >= 680 && showNav) {
         setShowNav(false);
       }
     }
 
     function handleClick(e) {
-      if (e.target.id === 'nav-menu-button') return;
+      if (e.target.id === 'nav-menu-button') {
+        setShowExperienceMenu(false);
+        setShowProjectsMenu(false);
+        return;
+      }
+      if (['nav-experience-button', 'nav-projects-button'].includes(e.target.id)) return;
       setShowNav(false);
+      setShowExperienceMenu(false);
+      setShowProjectsMenu(false);
     }
 
     window.addEventListener('resize', handleResize);
@@ -64,20 +79,54 @@ function App() {
   return (
     <div className={`app-container ${theme}`}>
       <div className={`app-topbar ${theme}`}>
-        <div className='app-header' onClick={() => setPage('about')}>Kenny <div className={`kenny-heagle-logo ${theme}`} /> Heagle</div>
+        <Link to="/"><div className='app-header'>Kenny <div className={`kenny-heagle-logo ${theme}`} /> Heagle</div></Link>
         <div className='app-theme-icon' onClick={toggleTheme}>{theme === 'light' ? <LightModeIcon fontSize='large' /> : <DarkModeIcon fontSize='large' />}</div>
         <div id='nav-menu-button' className="app-navigation-menu-button" onClick={toggleNavMenu}>
-            <MenuIcon fontSize='large' sx={{pointerEvents: 'none'}} />
+          <MenuIcon fontSize='large' sx={{ pointerEvents: 'none' }} />
         </div>
         <div className={`app-navigation ${theme} ${showNav ? 'expanded' : ''}`}>
-          <div className={`navigation-button ${page === 'experience' ? ' selected' : ''}`} onClick={() => { setPage('experience') }}>Experience</div>
-          <div className={`navigation-button ${page === 'stackApi' ? ' selected' : ''}`} onClick={() => { setPage('stackApi') }}>Stack Overflow</div>
-          <div className={`navigation-button ${page === 'loanAmortization' ? ' selected' : ''}`} onClick={() => { setPage('loanAmortization') }}>Mortgage Calculator</div>
-          <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
+          <DarkTooltip
+            className="navigation-dropdown-submenu"
+            title={
+              <>
+                <Link to="/"><div className={`navigation-dropdown-button ${location.pathname === '/' ? ' selected' : ''}`}>Verizon</div></Link>
+                <Link to="/resume"><div className={`navigation-dropdown-button ${location.pathname === '/resume' ? ' selected' : ''}`}>Resume</div></Link>
+              </>
+            }
+            open={showExperienceMenu}
+            placement={showNav ? 'left-start' : 'bottom'}
+          >
+            <div id="nav-experience-button" onClick={toggleExperienceMenu} className="navigation-button">
+              Experience
+            </div>
+          </DarkTooltip>
+
+          <DarkTooltip
+            className="navigation-dropdown-submenu"
+            title={
+              <>
+                <Link to="/stackApi"><div className={`navigation-dropdown-button ${location.pathname === '/stackApi' ? ' selected' : ''}`}>Stack API</div></Link>
+                <Link to="/loanAmortization"><div className={`navigation-dropdown-button ${location.pathname === '/loanAmortization' ? ' selected' : ''}`}>Mortgage Calculator</div></Link>
+              </>
+            }
+            open={showProjectsMenu}
+            placement={showNav ? 'left-start' : 'bottom'}
+          >
+            <div id="nav-projects-button" onClick={toggleProjectsMenu} className="navigation-button">
+              Projects
+            </div>
+          </DarkTooltip>
+          <Link to="/about"><div className={`navigation-button ${location.pathname === '/about' ? ' selected' : ''}`}>About</div></Link>
         </div>
       </div>
       <div className="app-page">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<Verizon theme={theme} />} />
+          <Route path="/resume" element={<Resume theme={theme} />} />
+          <Route path="/stackApi" element={<SearchForm theme={theme} />} />
+          <Route path="/loanAmortization" element={<AmortizationSchedule theme={theme} />} />
+          <Route path="/about" element={<AboutMe theme={theme} />} />
+        </Routes>
       </div>
     </div>
   );

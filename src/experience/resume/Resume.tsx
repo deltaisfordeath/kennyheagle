@@ -63,44 +63,48 @@ function ExperienceSection({ title, items }: { title: string, items: ExperienceI
    </div>
 }
 
-export default function Resume({theme}: {theme: VisualTheme}) {
-   return <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)'} as React.CSSProperties} className={`resume-container page-container ${theme}`}>
-      <TitleBlock />
+export default function Resume({ theme }: { theme: VisualTheme }) {
+   return <div className="project-container">
+      <div style={{ "--resume-text-accent": theme === 'light' ? 'rgb(40, 50, 210)' : 'rgb(150, 230, 255)' } as React.CSSProperties} className={`resume-container page-container ${theme}`}>
+         <TitleBlock />
 
-      <div className="personal-statement">Passionate about coding since my first Java class in 2008. Proficient in Front End Web Development.</div>
+         <div className="personal-statement">Passionate about coding since my first Java class in 2008. Proficient in Front End Web Development.</div>
 
-      <ExperienceSection title="Experience" items={EXPERIENCE_ITEMS} />
-      <ExperienceSection title="Education" items={EDUCATION_ITEMS} />
+         <ExperienceSection title="Experience" items={EXPERIENCE_ITEMS} />
+         <ExperienceSection title="Education" items={EDUCATION_ITEMS} />
 
-      <div className="skills-section">
-         <div className="header-text">Skills</div>
-         <div className="skills-list-container">
-            <ul>
-               <li>
-                  <div className="skills-item">Proficient in programming languages: Java, Typescript, and Python.</div>
-               </li>
-               <li>
-                  <div className="skills-item">Proficient in web development libraries: React, Redux, NextJS, GatsbyJS, RxJS, MobX, Material UI, Bootstrap.</div>
-               </li>
-               <li>
-                  <div className="skills-item">Experienced with unit testing with Jest, and end-to-end testing with Playwright.</div>
-               </li>
-               <li>
-                  <div className="skills-item">Proficient in HTML and CSS/SCSS.</div>
-               </li>
-               <li>
-                  <div className="skills-item">Experienced interfacing with REST and GraphQL APIs and building APIs using Node and Python.</div>
-               </li>
-               <li>
-                  <div className="skills-item">Keen attention to detail. Highly motivated self-starter. Excellent at prioritization and time management. Tenacious problem solver.</div>
-               </li>
-            </ul>
-
-
-
+         <div className="skills-section">
+            <div className="header-text">Skills</div>
+            <div className="skills-list-container">
+               <ul>
+                  <li>
+                     <div className="skills-item">Proficient in programming languages: Java, Typescript, and Python.</div>
+                  </li>
+                  <li>
+                     <div className="skills-item">Proficient in web development libraries: React, Redux, NextJS, GatsbyJS, RxJS, MobX, Material UI, Bootstrap.</div>
+                  </li>
+                  <li>
+                     <div className="skills-item">Experienced with unit testing with Jest, and end-to-end testing with Playwright.</div>
+                  </li>
+                  <li>
+                     <div className="skills-item">Proficient in HTML and CSS/SCSS.</div>
+                  </li>
+                  <li>
+                     <div className="skills-item">Experienced interfacing with REST and GraphQL APIs and building APIs using Node and Python.</div>
+                  </li>
+                  <li>
+                     <div className="skills-item">Keen attention to detail. Highly motivated self-starter. Excellent at prioritization and time management. Tenacious problem solver.</div>
+                  </li>
+               </ul>
 
 
+
+
+
+            </div>
          </div>
       </div>
-   </div>
+   </div>;
+
+
 }
