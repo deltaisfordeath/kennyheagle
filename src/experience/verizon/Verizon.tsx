@@ -1,8 +1,8 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { VisualTheme } from '../../App';
 import './Verizon.scss';
 import { COLLAB_BOARD_EXPERIENCE } from './verizon-experience';
-import { Modal, Portal } from '@mui/material';
+import { Modal } from '@mui/material';
 
 interface ImageModal {
   src: string,
