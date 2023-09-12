@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './App.scss';
 import AboutMe from './about/AboutMe';
-import Projects from './projects/Projects';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import Experience from './experience/Experience';
+import AmortizationSchedule from './projects/loan-amortization/AmortizationSchedule';
+import SearchForm from './projects/stack-api/SearchForm';
 
-type KennyPage = 'projects' | 'about' | 'experience';
+type KennyPage = 'loanAmortization' | 'stackApi' | 'about' | 'experience';
 export type VisualTheme = 'light' | 'dark';
 
 function App() {
@@ -28,11 +29,13 @@ function App() {
   const renderPage = useCallback(() => {
     switch (page) {
       case 'about':
-        return <AboutMe theme={theme} />
-      case 'projects':
-        return <Projects theme={theme} />
+        return <AboutMe theme={theme} />;
+      case 'stackApi':
+        return <SearchForm theme={theme} />;
+      case 'loanAmortization':
+        return <AmortizationSchedule theme={theme} />;
       case 'experience':
-        return <Experience theme={theme} />
+        return <Experience theme={theme} />;
     }
   }, [page, theme]);
 
@@ -68,7 +71,8 @@ function App() {
         </div>
         <div className={`app-navigation ${theme} ${showNav ? 'expanded' : ''}`}>
           <div className={`navigation-button ${page === 'experience' ? ' selected' : ''}`} onClick={() => { setPage('experience') }}>Experience</div>
-          <div className={`navigation-button ${page === 'projects' ? ' selected' : ''}`} onClick={() => { setPage('projects') }}>Projects</div>
+          <div className={`navigation-button ${page === 'stackApi' ? ' selected' : ''}`} onClick={() => { setPage('stackApi') }}>Stack Overflow</div>
+          <div className={`navigation-button ${page === 'loanAmortization' ? ' selected' : ''}`} onClick={() => { setPage('loanAmortization') }}>Mortgage Calculator</div>
           <div className={`navigation-button ${page === 'about' ? ' selected' : ''}`} onClick={() => { setPage('about') }}>About</div>
         </div>
       </div>
