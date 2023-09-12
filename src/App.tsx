@@ -44,12 +44,9 @@ function App() {
   useEffect(() => {
 
     function handleResize() {
-      if (showExperienceMenu) {
-        setShowExperienceMenu(false);
-      }
-      if (showProjectsMenu) {
-        setShowProjectsMenu(false);
-      }
+      setShowExperienceMenu(false);
+      setShowProjectsMenu(false);
+
       if (window.innerWidth >= 680 && showNav) {
         setShowNav(false);
       }
@@ -90,6 +87,7 @@ function App() {
             title={
               <>
                 <Link to="/"><div className={`navigation-dropdown-button ${location.pathname === '/' ? ' selected' : ''}`}>Verizon</div></Link>
+                <hr />
                 <Link to="/resume"><div className={`navigation-dropdown-button ${location.pathname === '/resume' ? ' selected' : ''}`}>Resume</div></Link>
               </>
             }
@@ -106,6 +104,7 @@ function App() {
             title={
               <>
                 <Link to="/stackApi"><div className={`navigation-dropdown-button ${location.pathname === '/stackApi' ? ' selected' : ''}`}>Stack API</div></Link>
+                <hr />
                 <Link to="/loanAmortization"><div className={`navigation-dropdown-button ${location.pathname === '/loanAmortization' ? ' selected' : ''}`}>Mortgage Calculator</div></Link>
               </>
             }

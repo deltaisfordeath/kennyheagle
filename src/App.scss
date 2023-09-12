@@ -5,6 +5,12 @@ html {
     font-size: 62.5%;
 }
 
+hr {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid $dark-text;
+}
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -156,6 +162,7 @@ html {
 
 .navigation-dropdown-submenu {
     a {
+        font-family: 'Fira Sans', sans-serif;
         text-transform: uppercase;
         text-decoration: none;
         color: $dark-text;
@@ -163,7 +170,8 @@ html {
     }
 
     .navigation-dropdown-button {
-        padding: 10px 20px;
+        font-size: 1.2rem;
+        padding: 15px 30px;
         cursor: pointer;
         text-align: center;
         &:hover {
