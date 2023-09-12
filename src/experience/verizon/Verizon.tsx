@@ -94,9 +94,9 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
           <div><span className="problem-solution">Solution:</span>{feature.solution}</div>
         </div>
         <div onClick={() => {
-          setImageModal({src: feature.image, alt: feature.imageAlt, caption: feature.imageCaption})
+          setImageModal({ src: feature.image, alt: feature.imageAlt, caption: feature.imageCaption })
         }}
-        className="collab-experience-image">
+          className="collab-experience-image">
           <img src={feature.image} alt={feature.imageAlt} />
         </div>
       </div>)}
@@ -182,10 +182,11 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
     </div>)
   }
 
-  return <div className={`verizon-experience-container page-container ${theme}`}>
-    {!!imageModal && <Modal
+  return <div className="project-container">
+    <div className={`verizon-experience-container page-container ${theme}`}>
+      {!!imageModal && <Modal
         open={true}
-        onClose={() => {setImageModal(null)}}
+        onClose={() => { setImageModal(null) }}
         onClick={() => setImageModal(null)}
         aria-labelledby={imageModal?.alt}
         aria-describedby={`${imageModal?.alt} enlarged`}
@@ -199,14 +200,17 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
           </div>
         </div>
       </Modal>}
-    <div className="verizon-project-navigation">
-      <div onClick={() => setSelectedProject('collab')} className={`verizon-project-button ${theme} ${selectedProject === 'collab' ? 'selected' : ''}`}>BlueJeans Collab Board</div>
-      <div onClick={() => setSelectedProject('studio')} className={`verizon-project-button ${theme} ${selectedProject === 'studio' ? 'selected' : ''}`}>BlueJeans Studio</div>
+      <div className="verizon-project-navigation">
+        <div onClick={() => setSelectedProject('collab')} className={`verizon-project-button ${theme} ${selectedProject === 'collab' ? 'selected' : ''}`}>BlueJeans Collab Board</div>
+        <div onClick={() => setSelectedProject('studio')} className={`verizon-project-button ${theme} ${selectedProject === 'studio' ? 'selected' : ''}`}>BlueJeans Studio</div>
+      </div>
+      {selectedProject === 'collab' ?
+        <CollabBoard />
+        :
+        <Studio />
+      }
     </div>
-    {selectedProject === 'collab' ?
-      <CollabBoard />
-      :
-      <Studio />
-    }
-  </div>
+  </div>;
+
+
 }
