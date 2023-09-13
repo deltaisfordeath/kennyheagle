@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import './AmortizationSchedule.css';
 import { VisualTheme } from '../../App';
+import '../Projects.scss';
 
 type PaymentItem = {
     number: number,
@@ -9,7 +10,7 @@ type PaymentItem = {
     balance: number;
 };
 
-export default function AmortizationSchedule({theme}: {theme: VisualTheme}) {
+export default function AmortizationSchedule({ theme }: { theme: VisualTheme }) {
     const [principal, setPrincipal] = useState(null);
     const [interest, setInterest] = useState(null);
     const [periods, setPeriods] = useState(null);
@@ -108,29 +109,35 @@ export default function AmortizationSchedule({theme}: {theme: VisualTheme}) {
 
     }
 
-    return (<div className="amortization-schedule">
-        <div className="demo-project-description">
-        {'Calculate monthly payment, total interest, and amortization schedule of a fully amortizing loan with monthly payments (ie: mortgage loan).'}
-        </div>
-        <div className="amortization-schedule-header">
-            <div className="loan-terms-container">
-                <div className="loan-term-input">
-                    <div className="loan-input-label">Principal: </div>
-                    <input id="principal" type="number" step="1000" placeholder='$0' value={principal ?? ''} onChange={(e => setPrincipal(e.target.value))} />
-                </div>
-                <div className="loan-term-input">
-                    <div className="loan-input-label">Interest: </div>
-                    <input id="interest" type="number" step="0.01" placeholder='0.00%' value={interest ?? ''} onChange={(e => setInterest(e.target.value))} />
-                </div>
-                <div className="loan-term-input">
-                    <div className="loan-input-label">Term: </div>
-                    <input id="periods" type="number" placeholder='0 Years' value={periods ?? ''} onChange={(e => setPeriods(e.target.value))} />
+    return (
+
+        <div className="project-container">
+            <div className={`page-container ${theme}`}>
+                <div className="amortization-schedule">
+                    <div className="demo-project-description">
+                        {'Calculate monthly payment, total interest, and amortization schedule of a fully amortizing loan with monthly payments (ie: mortgage loan).'}
+                    </div>
+                    <div className="amortization-schedule-header">
+                        <div className="loan-terms-container">
+                            <div className="loan-term-input">
+                                <div className="loan-input-label">Principal: </div>
+                                <input id="principal" type="number" step="1000" placeholder='$0' value={principal ?? ''} onChange={(e => setPrincipal(e.target.value))} />
+                            </div>
+                            <div className="loan-term-input">
+                                <div className="loan-input-label">Interest: </div>
+                                <input id="interest" type="number" step="0.01" placeholder='0.00%' value={interest ?? ''} onChange={(e => setInterest(e.target.value))} />
+                            </div>
+                            <div className="loan-term-input">
+                                <div className="loan-input-label">Term: </div>
+                                <input id="periods" type="number" placeholder='0 Years' value={periods ?? ''} onChange={(e => setPeriods(e.target.value))} />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {!!monthlyPayment && <AmortizationTable />}
                 </div>
             </div>
-
         </div>
-
-        {!!monthlyPayment && <AmortizationTable />}
-    </div>
     );
 }
