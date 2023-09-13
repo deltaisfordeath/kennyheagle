@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+
+    .heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .upload-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .upload-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .upload-label {
+                padding: 10px 20px;
+                background-color: #2196f3;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 4px;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #1976d2;
+                }
+            }
+
+            #upload-input {
+                display: none;
+            }
+        }
+
+        .image-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .preview-heading {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .preview-image {
+                max-width: 400px;
+                max-height: 400px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 85%;
+    min-height: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    .solution-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 300px;
+        height: 300px;
+
+        .piece-placeholder {
+            background: radial-gradient(white, rgb(221, 221, 221));
+        }
+    }
+
+    .puzzle-piece {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        opacity: 1;
+        position: absolute;
+        box-sizing: border-box;
+        border: 0.5px solid rgb(226, 226, 226);
+    }
+}
