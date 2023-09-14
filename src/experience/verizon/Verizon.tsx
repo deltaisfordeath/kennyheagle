@@ -175,9 +175,16 @@ export default function Verizon({ theme }: { theme: VisualTheme }) {
               Studio Presenter Dashboard
             </div>
           </div>
-
         </div>
-
+        <p>
+          Our team was having frequent meetings to discuss the roadmap for releasing the new presenter dashboard, and I prepared
+          a brief presentation on why I felt we should build the presenter dashboard within the existing moderator dashboard but with
+          a separate build script that would use an environment variable to determine which components would be excluded from the
+          presenter dashboard. After a brief discussion, my co-developer, manager, and the Studio lead developer agreed with my
+          proposal and we proceeded to develop the presenter dashboard as I proposed. Development was completed a week ahead of schedule
+          and it quickly became clear that I was correct in my recommendation, as we rolled out new features and fixed various bugs
+          that would have had to be copied from one repo to the other on an ongoing basis.
+        </p>
       </div>
     </div>)
   }
