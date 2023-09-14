@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './ImageUploader.scss';
+import './JigsawPuzzle.scss';
 
 interface PuzzlePiece {
     image: string;
@@ -8,7 +8,7 @@ interface PuzzlePiece {
     solved: boolean;
 }
 
-const ImageUploader = () => {
+const JigsawPuzzle = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [puzzlePieces, setPuzzlePieces] = useState([]);
     
@@ -184,4 +184,4 @@ const ImageUploader = () => {
     );
 };
 
-export default ImageUploader;
+export default JigsawPuzzle;

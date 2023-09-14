@@ -10,6 +10,7 @@ import AmortizationSchedule from './projects/loan-amortization/AmortizationSched
 import SearchForm from './projects/stack-api/SearchForm';
 import Verizon from './experience/verizon/Verizon';
 import Resume from './experience/resume/Resume';
+import JigsawPuzzle from './projects/jigsaw-puzzle/JigsawPuzzle';
 
 export type VisualTheme = 'light' | 'dark';
 
@@ -103,6 +104,8 @@ function App() {
             className="navigation-dropdown-submenu"
             title={
               <>
+                <Link to="/jigsaw"><div className={`navigation-dropdown-button ${location.pathname === '/jigsaw' ? ' selected' : ''}`}>Jigsaw Puzzle</div></Link>
+                <hr />
                 <Link to="/stackApi"><div className={`navigation-dropdown-button ${location.pathname === '/stackApi' ? ' selected' : ''}`}>Stack API</div></Link>
                 <hr />
                 <Link to="/loanAmortization"><div className={`navigation-dropdown-button ${location.pathname === '/loanAmortization' ? ' selected' : ''}`}>Mortgage Calculator</div></Link>
@@ -122,6 +125,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Verizon theme={theme} />} />
           <Route path="/resume" element={<Resume theme={theme} />} />
+          {/* TODO: add dark theme to jigsaw */}
+          <Route path="/jigsaw" element={<JigsawPuzzle />} />
           <Route path="/stackApi" element={<SearchForm theme={theme} />} />
           <Route path="/loanAmortization" element={<AmortizationSchedule theme={theme} />} />
           <Route path="/about" element={<AboutMe theme={theme} />} />
